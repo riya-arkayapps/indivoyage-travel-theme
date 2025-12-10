@@ -1,38 +1,386 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.hero-section {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.logo-with-btn {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  right: 25px;
+  z-index: 3000;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.logo {
+  color: white; 
+  font-family: "Pirata One", cursive;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 0.5;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.menu-btn div {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+}
+
+.hero-center {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-title {
+  font-size: 55px;
+  font-family: "Cinzel Decorative", serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-subtitle {
+  margin-top: 10px;
+  font-size: 28px;
+  font-family: "Cinzel";
+}
+
+.hero-content-box {
+  width: 85%;
+  max-width: 1100px;
+  background: white;
+  padding: 40px;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.hero-small-title {
+  text-align: center;
+  font-size: 18px;
+  font-family: "Cinzel";
+  color: #6b5737;
+}
+
+.hero-bold-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 900;
+  font-family: "IM Fell English SC", serif;
+  margin: 10px 0;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100vh;
+  background: #fafafa;
+  z-index: 3000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 40px 30px;
+}
+
+.back-btn {
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.sidebar-title {
+  text-align: center;
+  font-family: "Pirata One", cursive;
+  font-size: 40px;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  flex-grow: 1;  
+}
+
+.sidebar-links li {
+  margin: 18px 0;
+  font-size: 22px;
+  font-family: "Grenze Gotisch", serif;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar-footer-img {
+  margin-bottom: -3rem;
+  margin-top: auto;    
+  width: 100%;
+}
+
+.bg-wrapper{
+    background-color: #f8f8f8;
+}
+
+.home-about-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  width:90%;
+  margin: auto;
+  gap:2rem;
+}
+
+.home-about-section .img-section {
+  flex: 1;
+}
+
+.home-about-section .img-section img {
+  width: 100%;
+  height: 500px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.home-about-section .text-section {
+  flex: 1.2;
+}
+
+
+.home-about-section .text-section p {
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  font-size: 16px;
+  color: #787459;
+  transition: 0.2s ease;
+  font-weight: 300;
+}
+
+.bottom-btns-heading {
+  font-size: 24px;
+  font-weight: 300;
+  color: #76290D;
+  font-family: "Grenze Gotisch", serif;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.home-about-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home-about-section ul li {
+  border: 2px solid #76290D;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+  font-size: 16px;
+  color: #787459;
+  transition: 0.2s ease;
+  font-weight: 300;
+}
+
+.home-about-section ul li:hover {
+  background: #e7dccd;
+  cursor: pointer;
+}
+
+.text-section{
+  width: 40%;
+}
+
+.section-heading{
+  font-family: "Pirata One", cursive;
+  font-size: 38px;
+  color: #76290D;
+  font-weight: 400;
+  line-height: 0.5;
+}
+
+.section-subheading{
+  font-family: "Grenze Gotisch", serif;
+  font-size: 26px;
+  color: #787459;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.destinations-section{
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.destinations-section .section-heading,.destinations-section .section-subheading{
+  text-align: center;
+}
+
+.destinations-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.destination-card{
+  position: relative;
+  overflow: hidden; 
+}
+
+.destination-card img{
+  height: 300px;
+  width: 350px;
+}
+
+.card-content{
+  position: absolute;
+  bottom: -15px;         
+  left: 45%;             
+  transform: translateX(-50%);  
+  background: white;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: 80%;
+  text-align: center; 
+}
+
+.card-content h3{
+  font-size: 26px;
+}
+
+.card-content p{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #787459;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.rajasthan-section{
+   width: 90%;
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rajasthan-section h2{
+  color: #110d76;
+}
+
+.rajasthan-content{
+  width: 50%;
+}
+
+.trending-section {
+  width: 100%;
+  padding: 5rem 6%;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff7e6, #ffe6c7);
+  position: relative;
+  background: url('./Images/image\ 6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Horizontal scroll strip */
+.trending-strip {
+  display: flex;
+  gap: 35px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  scroll-behavior: smooth;
+}
+
+.trending-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.trending-card {
+  flex: 0 0 160px;
+  text-align: center;
+  transform: rotate(-3deg);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.trending-card:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.trending-card:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.trending-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.trending-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
 }
