@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import footerImg from "../Images/footer.webp";
 
 const Sidebar = ({ open, setOpen }) => {
@@ -23,11 +24,12 @@ const Sidebar = ({ open, setOpen }) => {
         <h2 className="sidebar-title">IndiVoyage</h2>
 
         <ul className="sidebar-links">
-          <li>Home</li>
-          <li>About us</li>
-          <li>Adventures</li>
-          <li>Contact us</li>
-          <li>FAQ</li>
+          <Link to='/'><li>Home</li></Link>
+          <Link to='/about'><li>About us</li></Link>
+          <Link to='/locations'><li>Locations</li></Link>
+          <Link to='/adventures'><li>Adventures</li></Link>
+          <Link to='/contact'><li>Contact us</li></Link>
+          <Link to='/faq'><li>FAQ</li></Link>
         </ul>
 
         <img
