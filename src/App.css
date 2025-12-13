@@ -66,6 +66,7 @@ body{
   background-position: center;
   padding: 160px 0 120px;
   text-align: center;
+  overflow: visible;
 }
 
 .hero-overlay {
@@ -91,7 +92,7 @@ body{
   margin: 0 auto;
   background: #fff;
   padding: 40px 50px;
-  margin-top: 100px;
+  margin-bottom: -8rem !important;
 }
 
 .hero-small-title {
@@ -1090,20 +1091,161 @@ filter: blur(8px);
   line-height: 1;
 }
 
-.simple-section {
-width: 90%; max-width: 1400px; margin: auto; padding: 5rem 0;
-background: #f3e2c2; border-radius: 10px;
+.how-we-work {
+  padding: 120px 0;
+  background: #fae0a9;
 }
-.center-title {
-font-size: 38px; color: #6b2c1a; text-align: center; margin-bottom: 3rem;
+
+.how-we-work-wrapper {
+  position: relative;
+  max-width: 1400px;
+  margin: auto;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.workflow-grid {
-display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-position: relative;
+
+/* Center text */
+.how-center {
+  text-align: center;
+  z-index: 2;
 }
-.workflow-box {
-background: #8c3f24; color: #fff; padding: 1.5rem; border-radius: 6px;
-position: relative; text-align: center; min-height: 150px;
+
+.how-center .subtitle {
+  font-size: 22px;
 }
-.workflow-box h3 { font-size: 22px; margin-bottom: 0.5rem; }
-.workflow-box p { font-size: 14px; line-height: 1.5; }
+
+.how-center h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 8px;
+  line-height: 1;
+}
+
+/* Cards */
+.how-card {
+  position: absolute;
+  width: 350px;
+  background: #76290D;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  z-index: 3;
+  transition: box-shadow 0.3s ease;
+  padding-bottom: 1.5rem;
+}
+
+.how-card:hover {
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
+}
+
+.how-card h4 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #ccb363;
+  font-family: "Grenze Gotisch", serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.how-card p {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 300;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* Positioning — adjust these to perfectly align with your dotted lines */
+.how-card.top {
+  top: -10%;
+  left: 38%;
+  transform: translateX(-50%);
+}
+
+.how-card.top-right {
+  top: 25%;
+  left: 70%;
+}
+
+.how-card.top-left {
+  top: 25%;
+  right: 70%;
+}
+
+.how-card.bottom-right {
+  bottom: 0;
+  right: 10%;
+}
+
+.how-card.bottom-left {
+  bottom: 0;
+  left: 10%;
+}
+
+.next-section-margin{
+  margin-top: 15rem;
+}
+
+.faq-section {
+  max-width: 1400px;
+  margin: auto;
+  padding:2rem;
+}
+
+.faq-section .section-heading ,.faq-section .section-subheading{
+  text-align: center;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 40px;
+}
+
+.faq-card {
+  border: 1.5px solid #9c4a2b;
+  padding: 22px 26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: start;
+}
+
+.faq-card:hover {
+  background: #faf7f4;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-header h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b5e4e;
+  margin: 0;
+}
+
+.icon {
+  font-size: 22px;
+  font-weight: 600;
+  color: #6b5e4e;
+}
+
+.faq-answer {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #7a7468;
+  font-family: "Montserrat", sans-serif;
+}

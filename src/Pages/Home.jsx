@@ -144,7 +144,7 @@ const Home=()=>{
 
    
     <div className="destinations-cards">
-      {destinations.map((i, index) => (
+      {destinations.slice(0,3).map((i, index) => (
         <motion.div
           className="destination-card"
           key={index}
