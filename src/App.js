@@ -9,6 +9,8 @@ import Contact from './Pages/Contact';
 import FAQ from './Pages/FAQ';
 import ScrollToTop from './Components/ScrollToTop';
 import Footer from './Components/Footer';
+import LocationDetail from './Pages/LocationDetail';
+import AdventureDetail from './Pages/AdventureDetail';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/adventures' element={<Adventures />} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/faq' element={<FAQ/>} />
+        <Route path='/locationDetail' element={<LocationDetail/>} />
+        <Route path='/adventureDetail' element={<AdventureDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -88,7 +88,7 @@ body{
 .hero-content-box {
   position: relative;
   z-index: 3;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   background: #fff;
   padding: 40px 50px;
@@ -1181,12 +1181,12 @@ filter: blur(8px);
 }
 
 .how-card.bottom-right {
-  bottom: 0;
+  bottom: -5%;
   right: 10%;
 }
 
 .how-card.bottom-left {
-  bottom: 0;
+  bottom: -5%;
   left: 10%;
 }
 
@@ -1248,4 +1248,188 @@ filter: blur(8px);
   line-height: 1.6;
   color: #7a7468;
   font-family: "Montserrat", sans-serif;
+}
+
+.feature-cards-section{
+  max-width: 1400px;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.feature-cards{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feature-card{
+  background-color: #76290D;
+  padding: 1rem 2rem;
+  max-width: 350px;
+  text-align: center;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.feature-card h3{
+  color: #ccb363;
+  font-family: "Grenze Gotisch", serif;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.feature-card p{
+  font-size: 12px;
+  line-height: 1.6;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gallery-section {
+  max-width: 1400px;
+  margin: auto;
+  padding: 2rem;           
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+   aspect-ratio: 1 / 1;
+  max-width: 400px;      /* 👈 control size */
+  margin: auto;          /* center in grid cell */
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.gallery-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 150px;
+  right: 130px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rajasthan-journey-section {
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
+}
+
+.rajasthan-timeline-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 140px;
+}
+
+.rajasthan-content-box {
+  width:100%;
+  border: 2px dashed #d28b57;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Image card */
+.rajasthan-image-card {
+  position: absolute;
+  top: -50px; /* image comes out vertically */
+  width: 400px;
+  height: 450px;
+  z-index: 10;
+}
+
+.rajasthan-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* LEFT timeline → image on RIGHT */
+.rajasthan-timeline-item.left .rajasthan-image-card {
+  right: -20px;
+}
+
+/* RIGHT timeline → image on LEFT */
+.rajasthan-timeline-item.right .rajasthan-image-card {
+  left: -20px;
+}
+
+/* Text styling */
+.rajasthan-content-box h4 {
+  color: #787459;
+  margin-bottom: 12px;
+  font-family: "Grenze Gotisch", serif;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.rajasthan-content-box li {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #778877;
+}
+
+.rajasthan-timeline-item.left {
+  justify-content: flex-start;
+}
+
+/* RIGHT → text right, image left */
+.rajasthan-timeline-item.right {
+  justify-content: flex-end;
+}
+
+.rajasthan-timeline-item.left .rajasthan-content-box {
+  text-align: left;
+}
+
+/* RIGHT item → text aligned right */
+.rajasthan-timeline-item.right .rajasthan-content-box {
+  text-align: right;
+}
+
+/* Keep list readable when right-aligned */
+.rajasthan-timeline-item.right .rajasthan-content-box ul {
+  padding-right: 0;
+  padding-left: 0;
+  list-style-position: inside;
 }

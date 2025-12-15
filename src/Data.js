@@ -20,6 +20,20 @@ import adventure4 from './Images/adv-4.webp';
 import adventure5 from './Images/adv-5.webp';
 import adventure6 from './Images/adv-6.webp';
 
+import Rajasthan1 from './Images/rajasthan-1.webp';
+import Rajasthan2 from './Images/rajasthan-2.webp';
+import Rajasthan3 from './Images/rajasthan-3.webp';
+import Rajasthan4 from './Images/rajasthan-4.webp';
+import Rajasthan5 from './Images/rajasthan-5.webp';
+import Rajasthan6 from './Images/rajasthan-6.webp';
+
+import HouseBoat1 from './Images/boat-1.webp';
+import HouseBoat2 from './Images/boat-2.webp';
+import HouseBoat3 from './Images/boat-3.webp';
+import HouseBoat4 from './Images/boat-4.webp';
+import HouseBoat5 from './Images/boat-5.webp';
+import HouseBoat6 from './Images/boat-6.webp';
+
 export const destinations=[
     {
         img:destination1,
@@ -180,4 +194,99 @@ export const adventures=[
         title:"Wildlife",
         desc:"Experience nature at its rawest as you witness rare species thriving in their natural habitats."
     }
+]
+
+export const RajasthanFeatures=[
+    {
+        title:"Royal Architecture",
+        desc:"Walk through centuries-old forts and stunning palaces that showcase India’s regal past in all its glory."
+    },
+     {
+        title:"Desert Adventures",
+        desc:"Experience camel safaris, jeep rides, and magical sunsets over the Thar Desert’s golden sand dunes."
+    },
+     {
+        title:"Unique Food & Local Crafts",
+        desc:"Taste authentic Rajasthani cuisine and explore exquisite handicraftsthat reflect the state’s vibrant artistry."
+    }
+]
+
+export const RajasthanLocations=[
+    {
+        img:Rajasthan1,
+        title:"Jaipur",
+        desc:"The vibrant Pink City known for its royal forts, palaces, and colorful bazaars."
+    },
+        {
+        img:Rajasthan2,
+        title:"Udaipur",
+        desc:"A serene lake city famed for its romantic ambience & stunning white architecture."
+    },
+        {
+        img:Rajasthan3,
+        title:"Jodhpur",
+        desc:"The Blue City dominated by the majestic Mehrangarh Fort &  blue-washed lanes."
+    },
+    {
+        img:Rajasthan4,
+        title:"Jaisalmer",
+        desc:"A golden desert city offering sandstone forts, dune adventures, & starry night safaris."
+    },
+        {
+        img:Rajasthan5,
+        title:"Mount Abu",
+        desc:"Rajasthan’s only hill station, perfect for cool weather, scenic views, and marble temples."
+    },
+        {
+        img:Rajasthan6,
+        title:"Pushkar",
+        desc:"A sacred town known for its holy lake, vibrant market streets, & the iconic Pushkar Fair."
+    }
+]
+
+export const RajasthanFaq=[
+    {
+    q: "What is the ideal duration for a Rajasthan trip?",
+    a: "A comfortable trip usually takes 5–7 days, covering major cities like Jaipur, Udaipur, Jodhpur, and Jaisalmer. If you want a quick getaway, 3–4 days is enough for one or two cities."
+  },
+  {
+    q: "What should I pack for a Rajasthan trip?",
+    a: "Pack light cotton clothes for daytime, a light jacket for evenings (especially in winter), comfortable walking shoes, sunscreen, sunglasses, and a hat. If you’re visiting in winter, pack warm layers for desert nights."
+  },
+  { q: "What is the budget range for a Rajasthan tour?", a: "A Rajasthan tour can cost anywhere between ₹15,000–₹25,000 per person for a budget trip. Mid-range tours usually fall around ₹30,000–₹50,000, while luxury experiences can go higher depending on hotels and activities." },
+  { q: "What is the weather like in Rajasthan?", a: "Rajasthan has hot summers, pleasant winters, and a short monsoon season. The best time to visit is October to March, when the weather is comfortable for sightseeing and travel." },
+  { q: "Is Rajasthan safe for tourists?", a: "Yes, Rajasthan is generally safe for tourists, including solo and family travelers. As with any destination, it’s advised to stay aware, follow local guidelines, and take basic safety precautions." },
+]
+
+export const RajasthanImages=[
+    {img:Rajasthan1},
+    {img:Rajasthan2},
+    {img:Rajasthan3},
+    {img:Rajasthan4},
+    {img:Rajasthan5},
+    {img:Rajasthan6},
+]
+
+export const HouseBoatFeatures=[
+    {
+        title:"Live Close to Nature",
+        desc:"Immerse yourself in serene surroundings where water, sky, & greenery blend into peaceful harmony."
+    },
+     {
+        title:"Water-Based Accommodation",
+        desc:"Stay in a charming floating home that offers comfort, calm, and an experience unlike any land stay."
+    },
+     {
+        title:"Perfect for Slow Adventure",
+        desc:"Unwind at your own pace with gentle journeys, quiet moments, and immersive nature-led exploration."
+    }
+]
+
+export const HouseBoatImages=[
+    {img:HouseBoat1},
+    {img:HouseBoat2},
+    {img:HouseBoat3},
+    {img:HouseBoat4},
+    {img:HouseBoat5},
+    {img:HouseBoat6},
 ]

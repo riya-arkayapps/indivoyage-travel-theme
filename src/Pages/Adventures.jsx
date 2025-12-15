@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { adventures } from "../Data";
 import breadCrumbImg from '../Images/Adventure-breadCrumb.webp';
@@ -24,6 +25,11 @@ const Adventures=()=>{
      
       <div className="destinations-cards">
         {adventures.map((i, index) => (
+           <Link
+      to="/adventureDetail"
+      key={index}
+      className="card-link"
+    >
           <motion.div
             className="destination-card"
             key={index}
@@ -50,6 +56,7 @@ const Adventures=()=>{
             </div>
   
           </motion.div>
+          </Link>
         ))}
       </div>
   

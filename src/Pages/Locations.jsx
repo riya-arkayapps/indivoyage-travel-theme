@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { destinations } from "../Data";
 import breadCrumbImg from '../Images/location-breadCrumb.webp';
@@ -24,6 +25,11 @@ const Locations=()=>{
    
     <div className="destinations-cards">
       {destinations.map((i, index) => (
+        <Link
+      to="/locationDetail"
+      key={index}
+      className="card-link"
+    >
         <motion.div
           className="destination-card"
           key={index}
@@ -32,7 +38,6 @@ const Locations=()=>{
           transition={{ duration: 0.55, delay: index * 0.12 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-
           <motion.img
             src={i.img}
             alt={i.title}
@@ -50,6 +55,7 @@ const Locations=()=>{
           </div>
 
         </motion.div>
+    </Link>
       ))}
     </div>
 
