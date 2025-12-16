@@ -239,6 +239,352 @@
   .footer-bottom-img {
     height: 250px;
   }
+
+  .journey-section {
+    width: 100%;
+    padding: 3rem 1rem;
+  }
+
+  .journey-text {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .journey-text p {
+    max-width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .section-heading {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .journey-card {
+    min-height: auto;
+    padding: 1.25rem;
+  }
+
+  .img-big-card {
+    min-height: 320px;
+  }
+
+  .overlay {
+    padding: 1.25rem;
+  }
+
+  .feature-cards {
+    gap: 0.8rem;
+  }
+
+  .feature-card {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 18px;
+  }
+
+  .feature-card p {
+    font-size: 11px;
+  }
+
+   .guide-section {
+    padding: 60px 16px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+
+  .table-header span {
+    font-size: 16px;
+  }
+
+  .table-row span {
+    font-size: 12px;
+  }
+
+  .table-row {
+    padding: 12px 14px;
+  }
+
+  .table-card {
+    border-radius: 6px;
+  }
+
+   .faq-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .faq-card {
+    padding: 16px 18px;
+  }
+
+  .faq-header h4 {
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .faq-answer {
+    font-size: 13px;
+    margin-top: 14px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4 / 5; /* slightly taller for mobile */
+  }
+
+  .gallery-section {
+    padding: 1rem;
+  }
+
+  .gallery-modal img {
+    max-width: 95%;
+    max-height: 85%;
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+  }
+
+  .itinerary-section {
+    padding: 60px 1rem;
+  }
+
+  .itinerary-box {
+    padding: 26px 20px;
+    border-width: 2px;
+  }
+
+  .itinerary-right p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .itinerary-left h2 {
+    line-height: 1.2;
+  }
+
+  .details-section {
+    padding: 60px 1rem;
+  }
+
+  .details-card-header {
+    font-size: 18px;
+    padding: 12px 14px;
+  }
+
+  .details-table-row {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .details-card li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .details-card {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+   .guide-section {
+    padding: 60px 1rem;
+  }
+
+  /* STACK LAYOUT */
+  .guide-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .guide-content {
+    text-align: center;
+  }
+
+  .guide-desc {
+    max-width: 100%;
+    font-size: 14px;
+    margin: auto;
+  }
+
+  /* TABLE WRAPPER */
+  .guide-tables {
+    gap: 20px;
+  }
+
+  /* TABLE HEADER → STACKED */
+  .table-header {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    font-size: 18px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  /* TABLE ROWS → STACKED */
+  .table-row {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    padding: 12px 16px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* REMOVE HOVER LIFT ON MOBILE */
+  .table-card:hover {
+    transform: none;
+  }
+
+   .faq-section {
+    padding: 1.5rem 1rem;
+  }
+
+  /* GRID → SINGLE COLUMN */
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* FAQ CARD */
+  .faq-card {
+    padding: 18px 18px;
+  }
+
+  /* QUESTION */
+  .faq-header h4 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  /* ICON */
+  .icon {
+    font-size: 20px;
+    margin-left: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ANSWER */
+  .faq-answer {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  /* REMOVE HOVER EFFECT ON MOBILE */
+  .faq-card:hover {
+    background: transparent;
+  }
+
+  .itinerary-section {
+    padding: 50px 1rem;
+  }
+
+  /* BOX */
+  .itinerary-box {
+    padding: 30px 20px;
+    border-width: 2px;
+  }
+
+  /* GRID → STACK */
+  .itinerary-grid {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    text-align: left;
+  }
+
+  /* HEADINGS */
+  .itinerary-section .section-heading,
+  .itinerary-section .section-subheading {
+    max-width: 100%;
+  }
+
+  .itinerary-left h2 {
+    line-height: 1.2;
+    font-size: 26px;
+  }
+
+  /* RIGHT CONTENT */
+  .itinerary-right p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .itinerary-right p:not(:last-child) {
+    margin-bottom: 14px;
+  }
+
+  .details-section {
+    padding: 50px 1rem;
+    text-align: center;
+  }
+
+  /* GRID → STACK */
+  .details-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* CARD */
+  .details-card {
+    transform: none;
+  }
+
+  /* HEADERS */
+  .details-card-header {
+    font-size: 22px;
+    padding: 12px 16px;
+  }
+
+  /* TABLE HEADER (CARD 1) */
+  .details-card .table-header {
+    grid-template-columns: 1fr 2fr;
+    font-size: 22px;
+    column-gap: 16px;
+  }
+
+  /* TABLE ROWS */
+  .details-table-row {
+    grid-template-columns: 1fr 2fr;
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  /* LIST ITEMS */
+  .details-card li {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 4px 0;
+  }
+
+  /* HOVER OFF (MOBILE) */
+  .details-card:hover {
+    transform: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
 }
 
 /* Small devices (sm: 576px and up) */
@@ -458,6 +804,244 @@
 
   .footer-bottom-img {
     height: 300px;
+  }
+
+   .journey-section {
+    width: 95%;
+    padding: 3.5rem 0;
+  }
+
+  .journey-text {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+
+  .journey-text p {
+    text-align: center;
+    max-width: 100%;
+    font-size: 14.5px;
+  }
+
+  .section-heading {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .img-big-card {
+    min-height: 360px;
+  }
+
+  .how-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .how-center h2 {
+    font-size: 28px;
+  }
+
+  .how-center .subtitle {
+    font-size: 16px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    width: 90%;
+    max-width: 320px;
+    padding: 1rem 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 20px;
+  }
+
+  .feature-card p {
+    font-size: 12px;
+  }
+
+  .rajasthan-content-box {
+    padding: 20px 15px;
+  }
+
+  .rajasthan-content-box h4 {
+    font-size: 18px;
+  }
+
+  .rajasthan-content-box li {
+    font-size: 13px;
+  }
+
+  .rajasthan-image-card {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .guide-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .guide-content {
+    text-align: center;
+  }
+
+  .guide-desc {
+    margin: auto;
+    font-size: 14px;
+  }
+
+  .guide-tables {
+    gap: 24px;
+  }
+
+  .table-header {
+    font-size: 18px;
+  }
+
+  .table-row {
+    font-size: 12.5px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .faq-card {
+    padding: 18px 20px;
+  }
+
+  .faq-header h4 {
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    font-size: 13.5px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item {
+    max-width: 100%;
+  }
+
+  .gallery-section {
+    padding: 1.5rem;
+  }
+
+  .close-btn {
+    top: 40px;
+    right: 30px;
+    font-size: 30px;
+  }
+
+  .itinerary-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .itinerary-left,
+  .itinerary-right {
+    text-align: center;
+  }
+
+  .itinerary-section .section-heading,
+  .itinerary-section .section-subheading {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .itinerary-box {
+    padding: 32px 28px;
+  }
+
+  .details-cards {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .details-section {
+    padding: 70px 1.5rem;
+  }
+
+  .details-card-header {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .details-table-row {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    text-align: center;
+  }
+
+  .details-card li {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-we-work-wrapper {
+    background-image: none; /* remove dotted background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .how-card {
+    position: static; /* remove absolute positioning */
+    margin: 20px 0;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .how-center h2 {
+    font-size: 32px;
+  }
+
+  .how-center .subtitle {
+    font-size: 18px;
+  }
+
+  .rajasthan-timeline-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  .rajasthan-image-card {
+    position: static; /* remove absolute positioning */
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
+    transform: rotate(0); /* remove rotation for simplicity */
+  }
+
+  .rajasthan-content-box {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border-width: 2px;
   }
 }
 
@@ -695,6 +1279,156 @@
   .footer-bottom-img {
     height: 350px;
   }
+
+  .journey-section {
+    width: 92%;
+    padding: 4rem 0;
+  }
+
+  .journey-text {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .journey-text p {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .section-heading {
+    font-size: 34px;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .img-big-card {
+    min-height: 400px;
+  }
+
+  .how-card {
+    width: 280px;
+  }
+
+  .feature-cards {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    max-width: 300px;
+    padding: 1rem 1.25rem;
+  }
+
+  .feature-card h3 {
+    font-size: 22px;
+  }
+
+  .feature-card p {
+    font-size: 12px;
+  }
+
+  .rajasthan-content-box {
+    padding: 30px 20px;
+  }
+
+  .rajasthan-content-box h4 {
+    font-size: 20px;
+  }
+
+  .rajasthan-content-box li {
+    font-size: 14px;
+  }
+
+  .rajasthan-image-card {
+    width: 280px;
+    height: 320px;
+  }
+
+  .guide-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .table-header {
+    font-size: 20px;
+    padding: 14px 16px;
+  }
+
+  .table-row {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .guide-desc {
+    max-width: 100%;
+  }
+
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .faq-card {
+    padding: 20px 22px;
+  }
+
+  .faq-header h4 {
+    font-size: 14.5px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+   .gallery-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    max-width: 340px;
+  }
+
+  .close-btn {
+    top: 80px;
+    right: 50px;
+    font-size: 32px;
+  }
+
+  .itinerary-grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+  }
+
+  .itinerary-box {
+    padding: 40px;
+  }
+
+  .itinerary-right p {
+    font-size: 14.5px;
+  }
+
+   .details-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .details-card-header {
+    font-size: 22px;
+  }
+
+  .details-table-row {
+    grid-template-columns: 1fr 1.5fr;
+    font-size: 14.5px;
+  }
+
+  .details-card li {
+    font-size: 14.5px;
+  }
 }
 
 /* Large devices (lg: 992px and up) */
@@ -877,5 +1611,134 @@
 
   .footer-bottom-img {
     height: 400px;
+  }
+
+  .journey-section {
+    width: 92%;
+  }
+
+  .journey-text {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .journey-text p {
+    max-width: 700px;
+  }
+
+  .section-heading {
+    font-size: 38px;
+  }
+
+  .journey-grid {
+    gap: 1.8rem;
+  }
+
+  .img-big-card {
+    min-height: 420px;
+  }
+
+  .how-card {
+    width: 300px;
+  }
+
+  .feature-card {
+    max-width: 320px;
+    padding: 1rem 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 24px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+  }
+
+  .rajasthan-content-box h4 {
+    font-size: 22px;
+  }
+
+  .rajasthan-content-box li {
+    font-size: 15px;
+  }
+
+  .rajasthan-image-card {
+    width: 320px;
+    height: 380px;
+  }
+
+  .guide-container {
+    gap: 40px;
+  }
+
+  .table-header {
+    font-size: 22px;
+  }
+
+  .table-row {
+    font-size: 13px;
+  }
+
+  .guide-desc {
+    font-size: 15px;
+  }
+
+   .faq-grid {
+    gap: 24px 32px;
+  }
+
+  .faq-header h4 {
+    font-size: 15px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+
+  .gallery-grid {
+    gap: 1.2rem;
+  }
+
+  .gallery-item {
+    max-width: 360px;
+  }
+
+  .close-btn {
+    top: 120px;
+    right: 80px;
+  }
+
+   .itinerary-box {
+    padding: 50px;
+  }
+
+  .itinerary-section .section-heading,
+  .itinerary-section .section-subheading {
+    max-width: 100%;
+  }
+
+  .itinerary-right p {
+    font-size: 15px;
+  }
+
+  .details-cards {
+    gap: 24px;
+  }
+
+  .details-card-header {
+    font-size: 24px;
+  }
+
+  .details-table-row,
+  .details-card li {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px){
+
+  .vector-img-home-about{
+    top:0%;
   }
 }

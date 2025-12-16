@@ -1,9 +1,7 @@
-import React from "react";
+import React,{ useState, useEffect} from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Header from "../Components/Header";
-import { destinations, itineraries, seasons } from "../Data";
-import breadCrumbImg from '../Images/home-breadcrumb.png';
+import { destinations, itineraries, seasons, slides } from "../Data";
 import aboutImg from '../Images/home-about.webp';
 import RajasthanImg from '../Images/home-rajasthan.webp';
 import CamelImg from '../Images/home-camel.webp';
@@ -16,21 +14,56 @@ import activity6 from '../Images/activity-5.webp';
 import activity7 from '../Images/activity-7.webp';
 import activity8 from '../Images/activity-8.webp';
 import activity9 from '../Images/activity-5.webp';
+import storyVector from '../Images/india-stories-vector.png';
+import aeroplaneicon from '../Images/plane.png';
 import pin from '../Images/pin.png';
 import Testimonials from "../Components/Testimonials";
 import Cta from "../Components/Cta";
 import Features from "../Components/Features";
+import Sidebar from "../Components/Sidebar";
 
 const Home=()=>{
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const [openSidebar, setOpenSidebar] = useState(false);
     return(
         <>
-        <Header 
-        bgImage={breadCrumbImg}
-      showDescription={false}
-      className='home-hero'/>
+        <section
+      className="hero"
+      style={{ backgroundImage: `url(${slides[index].image})` }}
+    >
+      {/* Overlay */}
+      <div className="overlay" />
+
+      {/* Header */}
+      <div className="logo-with-btn">
+        <h1 className="logo">IndiVoyage</h1>
+      <div className="menu-btn" onClick={() => setOpenSidebar(true)}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      </div>
+
+      {/* Center Content */}
+      <div className="hero-content">
+         <p>{slides[index].subtext}</p>
+        <h2>{slides[index].heading}</h2>
+      </div>
+    </section>
+
+    <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
+
       
       {/**India's Story come alive section */}
-       <div className="bg-wrapper">
+      
       <div className="home-about-section">
 
         {/* IMAGE SECTION */}
@@ -41,7 +74,7 @@ const Home=()=>{
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <img src={aboutImg} alt="" />
+          <img src={aboutImg} alt=" Heritage and adventures, curated for your journey" />
         </motion.div>
 
         {/* TEXT SECTION */}
@@ -114,8 +147,11 @@ const Home=()=>{
             )}
           </motion.ul>
         </motion.div>
+         <img src={storyVector} alt="" className="vector-img-home-about" />
+                <img src={aeroplaneicon} alt="" className="plane-img-1" />
+                <img src={aeroplaneicon} alt="" className="plane-img-2" />
       </div>
-    </div>
+
 
       {/**Destinations Section */}
       <div className="bg-wrapper">
@@ -251,7 +287,7 @@ const Home=()=>{
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: i * 0.1 }}
           >
-            <img src={pin} className="pin" alt="pin" />
+            <img src={pin} className="pin" alt="" />
 
             {even && <p className="label-top">{item.title}</p>}
 

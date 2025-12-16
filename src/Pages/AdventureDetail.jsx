@@ -1,11 +1,13 @@
 import React, {useState} from "react";
-import { motion} from "framer-motion";
+import { motion,AnimatePresence} from "framer-motion";
 import breadCrumbImg from '../Images/house-boat-breadcrumb.webp';
 import Header from "../Components/Header";
-import { HouseBoatFeatures, HouseBoatImages } from "../Data";
+import { HouseboatFaq, HouseBoatFeatures, HouseBoatImages } from "../Data";
 import Testimonials from "../Components/Testimonials";
+import Cta from "../Components/Cta";
 
 const AdventureDetail=()=>{
+     const [openIndex, setOpenIndex] = useState(0);
     const [openImg, setOpenImg] = useState(null);
     return(
         <>
@@ -40,6 +42,140 @@ const AdventureDetail=()=>{
       </div>
        </section>
 
+       {/**Days Detail Section */}
+       <section className="itinerary-section">
+      <motion.div
+        className="itinerary-box"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <div className="itinerary-grid">
+
+          {/* LEFT */}
+          <motion.div
+            className="itinerary-left"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="section-subheading">A Glimpse Into Your Floating Retreat</h3>
+            <h2 className="section-heading">
+              Itinerary for Your Houseboat Escape
+            </h2>
+          </motion.div>
+
+          {/* RIGHT */}
+          <motion.div
+            className="itinerary-right"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <p><strong>Day 1 – Arrival & Cruise</strong><br />
+              Arrive, check into your houseboat, enjoy a calm backwater cruise, and end the day with a serene sunset view.
+            </p>
+
+            <p><strong>Day 2 – Exploration & Local Life</strong><br />
+              Take a guided canoe ride, interact with local communities, and enjoy freshly prepared on-board meals.
+            </p>
+
+            <p><strong>Day 3 – Sunrise & Departure</strong><br />
+              Capture the morning light on the water before checking out and ending your peaceful retreat.
+            </p>
+          </motion.div>
+
+        </div>
+      </motion.div>
+    </section>
+
+    {/**Essential Travel Details Section */}
+    <section className="details-section">
+
+      <motion.div
+        className="details-heading"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="section-subheading">Essential Travel Details</h3>
+        <h2 className="section-heading">Everything You Need to Know</h2>
+      </motion.div>
+
+      <div className="details-cards">
+
+  {/* CARD 1 — TABLE */}
+  <motion.div
+    className="details-card"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+  >
+    <div className="details-card-header table-header">
+      <span>Season</span>
+      <span>Experience</span>
+    </div>
+
+    <div className="details-table-row">
+      <span>Winter</span>
+      <span>Best weather & peak views</span>
+    </div>
+
+    <div className="details-table-row">
+      <span>Monsoon</span>
+      <span>Lush, scenic, peaceful</span>
+    </div>
+
+    <div className="details-table-row">
+      <span>Summer</span>
+      <span>Hot but budget-friendly</span>
+    </div>
+  </motion.div>
+
+  {/* CARD 2 — LIST */}
+  <motion.div
+    className="details-card"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, delay: 0.15 }}
+    viewport={{ once: true }}
+  >
+    <div className="details-card-header">What’s Included</div>
+    <ul>
+      <li>✓ Houseboat stay</li>
+      <li>✓ All meals</li>
+      <li>✓ Guided activities</li>
+      <li>✓ Cruise timings</li>
+      <li>✓ Safety equipment</li>
+    </ul>
+  </motion.div>
+
+  {/* CARD 3 — LIST */}
+  <motion.div
+    className="details-card"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, delay: 0.3 }}
+    viewport={{ once: true }}
+  >
+    <div className="details-card-header">Who Is This Adventure For?</div>
+    <ul>
+      <li>✓ Nature lovers</li>
+      <li>✓ Photographers</li>
+      <li>✓ Couples</li>
+      <li>✓ Solo explorers</li>
+      <li>✓ Wildlife enthusiasts</li>
+    </ul>
+  </motion.div>
+
+</div>
+    </section>
+
         {/**Gallery Section */}
            <section className="gallery-section">
                <h3 className="section-subheading">The Essence of HouseBoat</h3>
@@ -60,13 +196,66 @@ const AdventureDetail=()=>{
            {/* Image Modal */}
              {openImg && (
                <div className="gallery-modal" onClick={() => setOpenImg(null)}>
-                 <img src={openImg} alt="Rajasthan Full View" />
+                 <img src={openImg} alt="" />
                  <span className="close-btn">×</span>
                </div>
              )}
        
         {/**Testimonials Section */}
         <Testimonials />
+
+        {/**FAQ Section */}
+         <section className="faq-section">
+      <h3 className="section-subheading">Your Questions, Answered</h3>
+      <h2 className="section-heading">Essential Travel Information</h2>
+
+      <div className="faq-grid">
+        {HouseboatFaq.map((item, i) => {
+          const isOpen = openIndex === i;
+
+          return (
+            <motion.div
+              key={i}
+              className={`faq-card ${isOpen ? "open" : ""}`}
+              onClick={() => setOpenIndex(isOpen ? null : i)}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="faq-header">
+                <h4>{item.q}</h4>
+
+                <motion.span
+                  className="icon"
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {isOpen ? "−" : "+"}
+                </motion.span>
+              </div>
+
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.p
+                    className="faq-answer"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                      layout
+                  >
+                    {item.a}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+
+     {/**Request a quote section */}
+        <Cta />
+
             
         </>
     )

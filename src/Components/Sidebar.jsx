@@ -34,7 +34,7 @@ const Sidebar = ({ open, setOpen }) => {
 
         <img
           src={footerImg}
-          alt="illustration"
+          alt="IndiVoyage"
           className="sidebar-footer-img"
         />
       </div>

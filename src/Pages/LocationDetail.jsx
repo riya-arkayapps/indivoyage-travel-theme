@@ -136,7 +136,7 @@ const LocationDetail=()=>{
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <img src={Story1} alt="Mehrangarh Fort" />
+            <img src={Story1} alt="7 Days – Rajasthan Highlights" />
           </motion.div>
         </div>
 
@@ -149,7 +149,7 @@ const LocationDetail=()=>{
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <img src={Story2} alt="City Palace" />
+            <img src={Story2} alt="5 Days – Jaipur & Udaipur Journey" />
           </motion.div>
 
           <motion.div
@@ -194,7 +194,7 @@ const LocationDetail=()=>{
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <img src={Story3} alt="City Palace Jaipur" />
+            <img src={Story3} alt="3 Days – Jaipur City Experience" />
           </motion.div>
         </div>
 
@@ -207,6 +207,55 @@ const LocationDetail=()=>{
         
         {/**Testimonials Section */}
         <Testimonials />
+
+        {/**Travel Guide Section */}
+         <section className="guide-section">
+      <div className="guide-container">
+        
+        {/* LEFT CONTENT */}
+        <div className="guide-content animate-left">
+          <h3 className="section-subheading">When to Go & What to Do</h3>
+          <h2 className="section-heading">
+            Your Essential<br /> Rajasthan Travel Guide
+          </h2>
+          <p className="guide-desc">
+            Plan your Rajasthan trip with clarity and confidence. This section gives you a quick overview of the ideal months to travel and the most unforgettable activities you shouldn’t miss—making it easier to create a journey that fits your style, pace, and expectations.
+          </p>
+        </div>
+
+        {/* RIGHT TABLES */}
+        <div className="guide-tables animate-right">
+
+          {/* TABLE 1 */}
+          <div className="table-card">
+            <div className="table-header">
+              <span>Season</span>
+              <span>Months</span>
+              <span>Travel Note</span>
+            </div>
+
+            <div className="table-row">Winter<span>Oct – Feb</span><span>Best weather, ideal for sightseeing</span></div>
+            <div className="table-row">Summer<span>Mar – Jun</span><span>Hot days, good for off-season deals</span></div>
+            <div className="table-row">Monsoon<span>Jul – Sept</span><span>Pleasant, fewer crowds, greener views</span></div>
+          </div>
+
+          {/* TABLE 2 */}
+          <div className="table-card">
+            <div className="table-header">
+              <span>Activity</span>
+              <span>Location</span>
+              <span>Highlight</span>
+            </div>
+
+            <div className="table-row">Fort Visits<span>Jaipur, Jodhpur</span><span>Iconic royal architecture</span></div>
+            <div className="table-row">Desert Safari<span>Jaisalmer</span><span>Camel rides & dune camping</span></div>
+            <div className="table-row">Lakeside Experiences<span>Udaipur</span><span>Boat rides & sunset views</span></div>
+            <div className="table-row">Cultural Shows<span>Jaipur, Jaisalmer</span><span>Folk dance & traditional music</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
          {/**Request a quote section */}
         <Cta />
@@ -280,7 +329,7 @@ const LocationDetail=()=>{
     {/* Image Modal */}
       {openImg && (
         <div className="gallery-modal" onClick={() => setOpenImg(null)}>
-          <img src={openImg} alt="Rajasthan Full View" />
+          <img src={openImg} alt="" />
           <span className="close-btn">×</span>
         </div>
       )}

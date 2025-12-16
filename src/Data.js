@@ -1,3 +1,7 @@
+import Hero1 from './Images/hero-slider-1.webp';
+import Hero2 from './Images/hero-slider-2.webp';
+import Hero3 from './Images/hero-slider-3.webp';
+
 import destination1 from './Images/destination-1.webp';
 import destination2 from './Images/destination-2.webp';
 import destination3 from './Images/destination-3.webp';
@@ -33,6 +37,24 @@ import HouseBoat3 from './Images/boat-3.webp';
 import HouseBoat4 from './Images/boat-4.webp';
 import HouseBoat5 from './Images/boat-5.webp';
 import HouseBoat6 from './Images/boat-6.webp';
+
+export const slides = [
+  {
+    image: Hero1,
+    heading: "A Sophisticated Gateway to India’s Most Iconic Experiences.",
+    subtext: "Explore destinations, stories, and experiences through a seamless and intuitive interface."
+  },
+  {
+    image: Hero2,
+    heading: "A Modern Window Into Punjab’s Timeless Heritage.",
+    subtext: "Explore iconic places, vibrant culture, and authentic experiences with ease."
+  },
+  {
+    image: Hero3,
+    heading: "A Sophisticated Journey Into Agra’s Majestic Past.",
+    subtext: "Uncover its wonders through a clean, elegant, and immersive experience."
+  }
+];
 
 export const destinations=[
     {
@@ -289,4 +311,42 @@ export const HouseBoatImages=[
     {img:HouseBoat4},
     {img:HouseBoat5},
     {img:HouseBoat6},
+]
+
+export const HouseboatFaq = [
+  {
+    q: "What is the ideal duration for a houseboat stay?",
+    a: "A typical houseboat stay lasts 1–3 nights, depending on your itinerary and the waterbody you are exploring. Most travelers prefer a 2-night stay to enjoy the scenic views and local experiences."
+  },
+  {
+    q: "What should I pack for a houseboat stay?",
+    a: "Pack comfortable clothing, a light jacket or sweater for cooler evenings, sunscreen, sunglasses, a hat, and slippers or non-slip shoes. Don’t forget a camera to capture the beautiful surroundings."
+  },
+  {
+    q: "Is it safe to stay on a houseboat?",
+    a: "Yes, houseboat stays are generally safe. Most boats are equipped with life jackets, fire safety measures, and trained staff. It’s always recommended to follow the safety instructions provided by the crew."
+  },
+  {
+    q: "Can I get meals on the houseboat?",
+    a: "Most houseboats offer meals included in your stay, often featuring local cuisine. You can request vegetarian, vegan, or other dietary preferences in advance. Some luxury boats even offer custom menus."
+  },
+  {
+    q: "What is the best time to go for a houseboat stay?",
+    a: "The best time depends on the region. In places like Kerala, October to March is ideal for pleasant weather. Avoid the monsoon season if you prefer calm waters and outdoor activities."
+  },
+]
+
+export const ContactPgFeatures=[
+    {
+    title: "Easy & Quick Communication",
+    desc: "Reach out to us effortlessly through phone, email, or form submissions, and get prompt assistance."
+  },
+  {
+    title: "Personalized Travel Support",
+    desc: "Share your requirements and preferences, and we’ll help tailor the perfect travel experience for you."
+  },
+  {
+    title: "Trusted & Responsive Team",
+    desc: "Our friendly team is always ready to answer your questions and guide you at every step."
+  }
 ]
