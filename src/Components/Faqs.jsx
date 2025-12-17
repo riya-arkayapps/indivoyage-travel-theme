@@ -1,6 +1,9 @@
+/**Important Imports useful in code */
 import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+/**Data Import */
 import { faqs } from "../Data";
 
 const Faqs=()=>{

@@ -1,5 +1,9 @@
 import React from "react";
+
+/**Image Import */
 import breadCrumbImg from '../Images/about-hero.webp';
+
+/**Components Import */
 import Header from "../Components/Header";
 import Features from "../Components/Features";
 import Testimonials from "../Components/Testimonials";
@@ -21,12 +25,12 @@ const About=()=>{
      {/**Mission and Vision Section */}
      <MissionVision />
 
+        {/**Experience travel section */}
+       <Features />
+
         {/**Simple, Thoughtful, & Traveler-First */}
             <HowWeWork />
             
-      {/**Experience travel section */}
-       <Features />
-
        {/**Testimonials Section */}
         <Testimonials />
 

@@ -1,10 +1,16 @@
 import React, {useState} from "react";
 import { motion,AnimatePresence} from "framer-motion";
+
+/**Image Import */
 import breadCrumbImg from '../Images/house-boat-breadcrumb.webp';
+
+/**Component Import */
 import Header from "../Components/Header";
-import { HouseboatFaq, HouseBoatFeatures, HouseBoatImages } from "../Data";
 import Testimonials from "../Components/Testimonials";
 import Cta from "../Components/Cta";
+
+/**Data Import */
+import { HouseboatFaq, HouseBoatFeatures, HouseBoatImages } from "../Data";
 
 const AdventureDetail=()=>{
      const [openIndex, setOpenIndex] = useState(0);

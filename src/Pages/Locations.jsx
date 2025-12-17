@@ -1,8 +1,15 @@
+/**Important Imports useful in code */
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
+/**Data Import */
 import { destinations } from "../Data";
+
+/**Image Imprort */
 import breadCrumbImg from '../Images/location-breadCrumb.webp';
+
+/**Component Import */
 import Header from "../Components/Header";
 import Cta from "../Components/Cta";
 

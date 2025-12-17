@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
+/**Data Import */
 import { adventures } from "../Data";
+
+/**Image Import */
 import breadCrumbImg from '../Images/Adventure-breadCrumb.webp';
+
+/**Component Import */
 import Header from "../Components/Header";
 import Cta from "../Components/Cta";
 

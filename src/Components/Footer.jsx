@@ -2,6 +2,38 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
+  const footerColumns = [
+    {
+      title: "Quick Links",
+      items: [
+        { label: "Home", path: "/" },
+        { label: "About us", path: "/about" },
+        { label: "Adventures", path: "/adventure" },
+        { label: "Contact us", path: "/contact" },
+        { label: "FAQ", path: "/faq" }
+      ]
+    },
+    {
+      title: "Recommended Travel",
+      items: [
+        { label: "Hampi", path: "/locationDetail" },
+        { label: "Coorg", path: "/locationDetail" },
+        { label: "Munnar", path: "/locationDetail" },
+        { label: "Rishikesh", path: "/locationDetail" },
+        { label: "Pondicherry", path: "/locationDetail" }
+      ]
+    },
+    {
+      title: "Adventures",
+      items: [
+        { label: "Hot Air Ballooning", path: "/adventureDetail" },
+        { label: "Wildlife Safari", path: "/adventureDetail" },
+        { label: "Scuba Diving", path: "/adventureDetail" },
+        { label: "Backwater Cruise", path: "/adventureDetail" },
+        { label: "Wildlife", path: "/adventureDetail" }
+      ]
+    }
+  ];
   return (
     <footer className="footer-section">
       <div className="footer-top">
@@ -20,11 +52,7 @@ const Footer = () => {
           </p>
         </motion.div>
 
-        {[
-          { title: "Quick Links", items: ["Home","About us","Adventures","Contact us","FAQ"] },
-          { title: "Recommended Travel", items: ["Hampi","Coorg","Munnar","Rishikesh","Pondicherry"] },
-          { title: "Adventures", items: ["Hot Air Ballooning","Wildlife Safari","Scuba Diving","Backwater Cruise","Wildlife"] },
-        ].map((col, i) => (
+        {footerColumns.map((col, i) => (
           <motion.div
             className="footer-col"
             key={i}
@@ -36,7 +64,17 @@ const Footer = () => {
             <h4>{col.title}</h4>
             <ul>
               {col.items.map((item, index) => (
-                <li key={index}>{item}</li>
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <a href={item.path} className="hover:underline">
+                    {item.label}
+                  </a>
+                </motion.li>
               ))}
             </ul>
           </motion.div>

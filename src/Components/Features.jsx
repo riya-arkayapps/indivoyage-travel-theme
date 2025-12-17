@@ -1,8 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion"; 
+
+/**Image Import */
 import icon1 from '../Images/i1.png';
 import icon2 from '../Images/i2.png';
 import icon3 from '../Images/i3.png';
+import featureVector from '../Images/feature-vector.png';
+import aeroplaneicon from '../Images/plane.png';
 
 const Features=()=>{
     return(
@@ -69,6 +73,8 @@ const Features=()=>{
               ))}
             </div>
           </motion.div>
+          <img src={featureVector} alt="" className="vector-img-feature" />
+                <img src={aeroplaneicon} alt="" className="plane-img-1-feature" />
         </div>
         </>
     )

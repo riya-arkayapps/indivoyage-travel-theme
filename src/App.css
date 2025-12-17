@@ -24,25 +24,18 @@ body{
   justify-content: center;
 }
 
-/* Black overlay */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-/* Center text */
 .hero-content {
    position: absolute;
   left: 50%;
-  bottom: 40px;        /* ⬅️ controls distance from bottom */
+  bottom: 40px;       
   transform: translateX(-50%);
   z-index: 10;
   text-align: center;
   color: #fff;
-  max-width: 1200px;
+  max-width: 1400px;
+  width: 80%;
   padding: 0 20px;
+  z-index: 10;;
 }
 
 .hero-content h2 {
@@ -67,22 +60,26 @@ body{
   position: relative;
 }
 
-.hero-overlay {
+.hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+   z-index: 1;
 }
 
-.logo-with-btn {
+/*.logo-with-btn {
   position: fixed;
   top: 20px;
-  left: 25px;
-  right: 25px;
+  left:50%;
+  transform: translateX(-50%);
+   width: calc(100% - 50px); 
+  max-width: 1400px;
   z-index: 3000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  background: transparent;
+}*/
 
 .logo {
   color: white; 
@@ -93,11 +90,8 @@ body{
 }
 
 .menu-btn {
-  position: fixed;
-  top: 25px;
-  right: 25px;
+   position: relative;   /* 🔑 FIX */
   cursor: pointer;
-  z-index: 2000;
 }
 
 .menu-btn div {
@@ -105,6 +99,49 @@ body{
   height: 3px;
   background: white;
   margin: 5px 0;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 3000;
+  
+  display: flex;
+  align-items: center;
+
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-inner a{
+  text-decoration: none;
+}
+
+.site-header.scrolled {
+  background: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.site-header.scrolled .logo {
+  color: #76290D;
+}
+
+.site-header.scrolled .menu-btn div {
+  background: #76290D;
 }
 
 .hero-section {
@@ -133,13 +170,19 @@ body{
 }
 
 .hero-content-box {
-  position: relative;
+  position: relative; /* keep it relative to the hero-section */
   z-index: 3;
   max-width: 1300px;
   margin: 0 auto;
   background: #fff;
   padding: 40px 50px;
-  margin-bottom: -8rem !important;
+
+  /* Instead of negative margin, use transform */
+  top: 20px; /* move it down from the top of hero-section */
+  border-radius: 12px; /* optional, looks nicer */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width:90%;
+  margin: auto;
 }
 
 .hero-small-title {
@@ -227,11 +270,6 @@ body{
 .sidebar-footer-img {
   width: 100%;
   margin-top: auto;
-  border-radius: 10px;
-}
-
-.bg-wrapper{
-    background-color: #f8f8f8;
 }
 
 .home-about-section{
@@ -266,12 +304,14 @@ body{
 
 
 .home-about-section .text-section p {
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: 1.8rem;
   font-size: 16px;
   color: #787459;
   transition: 0.2s ease;
   font-weight: 300;
+  letter-spacing: 0.7px;
+  text-align: justify;
 }
 
 .bottom-btns-heading {
@@ -281,6 +321,11 @@ body{
   font-family: "Grenze Gotisch", serif;
   margin-bottom: 0.7rem;
   letter-spacing: 1px;
+}
+
+.home-about-section a{
+  text-decoration: none;
+  color: #787459;
 }
 
 .home-about-section ul,.seasons-section ul {
@@ -310,8 +355,6 @@ body{
   position: absolute;
    top: -10%;
    right:75%;
-  width: 90vw;       /* cover full viewport width */
-  height: 1200px;      /* fixed tall height */
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
@@ -319,19 +362,19 @@ body{
 
 .plane-img-1 {
    position: absolute;
-  top: 83%;   /* adjust placement */
-  right: max(88%, 55px); /* adjust placement */
+  top: 83%;  
+  right: max(88%, 55px);
   width: 60px;
   height: auto;
-  transform: rotate(5deg);
+  transform: rotate(-30deg);
   z-index: 3;
   pointer-events: none;
 }
 
 .plane-img-2 {
    position: absolute;
-  top: 40%;   /* adjust placement */
-  right: 100%; /* adjust placement */
+  top: 11.5%;  
+  right: 100%; 
   width: 50px;
   height: auto;
   transform: rotate(-100deg);
@@ -346,7 +389,7 @@ body{
 
 .section-heading{
   font-family: "Pirata One", cursive;
-  font-size: 38px;
+  font-size: 42px;
   color: #76290D;
   font-weight: 400;
   line-height: 0.5;
@@ -354,7 +397,7 @@ body{
 
 .section-subheading{
   font-family: "Grenze Gotisch", serif;
-  font-size: 26px;
+  font-size: 30px;
   color: #787459;
   font-weight: 400;
   line-height: 1;
@@ -366,6 +409,7 @@ body{
   margin: auto;
   margin-top: -2rem;
   padding-bottom: 5rem;
+  position: relative;
 }
 
 .destinations-section .section-heading,.destinations-section .section-subheading{
@@ -410,11 +454,87 @@ body{
 }
 
 .card-content p{
-  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   color: #787459;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
+}
+
+
+.vector-img-location {
+  position: absolute;
+   top: -10%;
+   right:-15%;
+  height: 110%;
+  width: 50%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.plane-img-1-location {
+  position: absolute;
+  top: 85%;   
+  right: max(-15%, 55px); 
+  width: 60px;
+  height: auto;
+  transform: rotate(-125deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.plane-img-2-location {
+   position: absolute;
+  top: 8%;   
+  right: -2%; 
+  width: 50px;
+  height: auto;
+  transform: rotate(10deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+.vector-img-itinerary {
+  position: absolute;
+   top: -45%;
+   right:70%;
+  height: 1000px;
+   width: 55%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.plane-img-1-itinerary {
+  position: absolute;
+  top: 0%;   
+  right: max(84.5%, 55px); 
+  width: 60px;
+  height: auto;
+  transform: rotate(-100deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.vector-img-season {
+  position: absolute;
+   top: 0%;
+   right:100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.plane-img-1-season{
+  position: absolute;
+  top: 95%;   
+  right: max(98.5%, 55px); 
+  width: 50px;
+  height: auto;
+  transform: rotate(-80deg);
+  z-index: 3;
+  pointer-events: none;
 }
 
 .rajasthan-section {
@@ -443,6 +563,8 @@ body{
   margin-bottom: 22px;
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+  z-index: 15;
 }
 
 .rajasthan-content a {
@@ -522,7 +644,7 @@ body{
 .trending-bg::before{
   content: "";
   position: absolute;
-  bottom: 710px; 
+  bottom: 720px; 
   left: -100px;
   width: 150%;
   height: 500px; 
@@ -566,24 +688,22 @@ body{
   gap: 70px;
   margin-top: 60px;
   flex-wrap: nowrap;   
-  max-width: 1400px;    /* <<< FIXES 2000px stretched screens */
+  max-width: 1400px;   
   min-width: 1000px; 
   justify-content: center;
   margin: auto;
 }
 
 .trending-strip::before {
-  height: 140px;           /* SAME on all screens */
+  height: 140px;          
 }
 
-/* ----------- CARD BASE STYLE ----------- */
 .trending-card {
   width: 120px;
   position: relative;
   text-align: center;
 }
 
-/* PIN Above Image */
 .pin {
   width: 10px;
   height: 30px;
@@ -593,14 +713,12 @@ body{
   z-index: 10;
 }
 
-/* IMAGE */
 .photo-frame img {
  width:100px;
  height: 100px;
   object-fit: cover;
 }
 
-/* TITLE */
 .trending-card p {
   margin-top: 10px;
   font-size: 18px;
@@ -608,7 +726,6 @@ body{
   color:#76290D;
 }
 
-/* ----------- EXACT TILT REPLICA ----------- */
 .card-0 {  top: 170px; }
 .card-1 { top: -5px; }
 .card-2 { top: 175px; }
@@ -635,30 +752,26 @@ body{
   padding: 80px 40px;
   text-align: left;
   position: relative;
+  margin-bottom: 8rem;
 }
 
 .travel-section::after{
   content: "";
 position: absolute;
-top: 440px;               /* position of the curve */
+top: 455px;              
 left: 50%;
 transform: translateX(-50%);
 width: 140%;
-height: 200px;            /* vertical size of the curve area */
+height: 200px;           
 pointer-events: none;
 z-index: 6;
-
-/* SVG path with black fill */
 background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 360' preserveAspectRatio='none'><path d='M0,180 C140,120 240,60 420,120 C600,190 740,60 920,120 C1080,180 1220,100 1440,140 L1440,0 L0,0 Z' fill='%23f8f8f8'/></svg>");
 
 background-repeat: no-repeat;
 background-position: 50% 0;
 background-size: 100% 100%;
-
-/* gentle fade so the fog is soft */
 opacity: 0.95;
 filter: blur(8px);
-
 }
 
 .travel-section .section-heading{
@@ -681,7 +794,6 @@ filter: blur(8px);
   margin-top: -2rem;
 }
 
-/* FEATURES ROW */
 .travel-features {
   display: flex;
   justify-content: space-between;
@@ -723,6 +835,27 @@ filter: blur(8px);
   font-weight: 300;
 }
 
+
+.vector-img-feature {
+  position: absolute;
+   top: 45%;
+   right:0%;
+  z-index: 8;
+  height: 400px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.plane-img-1-feature {
+  position: absolute;
+  top: 88%;   
+  right: max(20%, 55px); 
+  width: 60px;
+  height: auto;
+  z-index: 9;
+  pointer-events: none;
+}
+
 .dream-section {
   width: 100%;
   height: 520px;
@@ -737,54 +870,47 @@ filter: blur(8px);
   position: relative;
 }
 
+.dream-section a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .dream-section::before{
    content: "";
   position: absolute;
-  top: -20px;               /* pull the curve above the top edge */
+  top: -20px;              
   left: 50%;
   transform: translateX(-50%);
   width: 140%;
-  height: 200px;            /* vertical size of the curve area */
+  height: 150px;           
   pointer-events: none;
   z-index: 6;
-
-  /* SVG path creates uneven wavy edge; fill is white (fog) */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 360' preserveAspectRatio='none'><path d='M0,180 C140,120 240,60 420,120 C600,190 740,60 920,120 C1080,180 1220,100 1440,140 L1440,0 L0,0 Z' fill='%23f8f8f8'/></svg>");
-
-  /* soften the white fog to transparent towards center */
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: 100% 100%;
-
-  /* gentle fade so the fog is soft */
-  opacity: 0.95;
+  opacity: 1;
   filter: blur(8px);
 }
 
-/* BOTTOM FOG */
 .dream-section::after {
  content: "";
   position: absolute;
-  bottom: -20px;            /* pull the curve below the bottom edge */
+  bottom: -20px;            
   left: 50%;
   transform: translateX(-50%);
   width: 140%;
-  height: 200px;
+  height: 150px;
   pointer-events: none;
   z-index: 6;
-
-  /* SVG path for bottom; shape is different to look natural */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 360' preserveAspectRatio='none'><path d='M0,180 C160,230 320,300 480,240 C640,170 800,310 960,240 C1120,170 1280,260 1440,220 L1440,360 L0,360 Z' fill='%23f8f8f8'/></svg>");
-
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 100%;
-
-  opacity: 0.95;
+  opacity: 1;
   filter: blur(8px);
 }
 
-/* Fog at top */
 .dream-overlay {
   position: absolute;
   top: 0;
@@ -812,7 +938,6 @@ filter: blur(8px);
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Transparent Outline Button */
 .dream-btn {
   padding: 12px 32px;
   border: 1px solid #eac17b;
@@ -835,6 +960,20 @@ filter: blur(8px);
   max-width: 1400px;
   margin: auto;
   margin-bottom: 8rem;
+  position: relative;
+}
+
+.seasons-section .section-heading,.seasons-section .section-subheading{
+  text-align: right;
+}
+
+.seasons-section .center-text{
+  text-align: center;
+}
+
+.seasons-section a{
+  text-decoration: none;
+  color: #787459;
 }
 
 .heading-ul-wrapper{
@@ -856,7 +995,7 @@ filter: blur(8px);
   position: relative;
   padding: 80px 0;
   text-align: center;
-  background-image: url("./Images/testimonial-bg.webp"); /* replace with your bg */
+  background-image: url("./Images/testimonial-bg.webp");
   background-size: cover;
   background-position: center;
 }
@@ -892,7 +1031,6 @@ filter: blur(8px);
   color: #d8d8d8;
 }
 
-/* Slider */
 .testi-swiper {
   position: relative;
   z-index: 5;
@@ -904,7 +1042,6 @@ filter: blur(8px);
   margin: auto;
 }
 
-/* Cards */
 .testi-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(4px);
@@ -957,13 +1094,13 @@ filter: blur(8px);
   margin-top: 5rem;
 }
 
-/* dotted border image */
 .quote-section-contact-pg::before {
   content: "";
   position: absolute;
   inset: 20px; 
   background: url("./Images/dotted-form.png") center / 100% 100% no-repeat;
   pointer-events: none;
+  z-index: 20;
 }
 
 
@@ -987,7 +1124,6 @@ filter: blur(8px);
   resize: none;
 }
 
-/* INPUT FIELDS */
 .quote-form input,
 .quote-form textarea {
   padding: 14px 18px;
@@ -1004,7 +1140,6 @@ filter: blur(8px);
   color: #7b6a5a;
 }
 
-/* SUBMIT BUTTON */
 .submit-btn {
   height: 45px;
   background: #7a5a44;
@@ -1089,6 +1224,11 @@ filter: blur(8px);
   font-family: 'Montserrat', sans-serif;
 }
 
+footer a{
+  text-decoration: none;
+  color:#292929 ;
+}
+
 .footer-bottom-img {
   width: 100vw;                
   height: 500px;
@@ -1170,8 +1310,8 @@ filter: blur(8px);
 .img-big-card::after{
   content: "";
   position: absolute;
-  inset: 0;                 /* covers full width + height */
-  background: rgba(0,0,0,0.5);  /* black overlay */
+  inset: 0;                
+  background: rgba(0,0,0,0.5);
   z-index: 1;  
 }
 
@@ -1195,20 +1335,19 @@ filter: blur(8px);
 }
 
 .how-we-work-wrapper {
+   background-image: url("./Images/dotted-lines.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   position: relative;
   max-width: 1400px;
   margin: auto;
   height: 600px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-    position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Center text */
 .how-center {
   text-align: center;
   z-index: 2;
@@ -1225,7 +1364,6 @@ filter: blur(8px);
   line-height: 1;
 }
 
-/* Cards */
 .how-card {
   position: absolute;
   width: 350px;
@@ -1261,7 +1399,6 @@ filter: blur(8px);
   margin: auto;
 }
 
-/* Positioning — adjust these to perfectly align with your dotted lines */
 .how-card.top {
   top: -10%;
   left: 38%;
@@ -1402,8 +1539,8 @@ filter: blur(8px);
 
 .gallery-item {
    aspect-ratio: 1 / 1;
-  max-width: 400px;      /* 👈 control size */
-  margin: auto;          /* center in grid cell */
+  max-width: 400px;      
+  margin: auto;         
   overflow: hidden;
   margin-bottom: 1rem;
 }
@@ -1467,10 +1604,9 @@ filter: blur(8px);
   overflow: visible;
 }
 
-/* Image card */
 .rajasthan-image-card {
   position: absolute;
-  top: -50px; /* image comes out vertically */
+  top: -50px; 
   width: 400px;
   height: 450px;
   z-index: 10;
@@ -1482,17 +1618,14 @@ filter: blur(8px);
   object-fit: cover;
 }
 
-/* LEFT timeline → image on RIGHT */
 .rajasthan-timeline-item.left .rajasthan-image-card {
   right: -20px;
 }
 
-/* RIGHT timeline → image on LEFT */
 .rajasthan-timeline-item.right .rajasthan-image-card {
   left: -20px;
 }
 
-/* Text styling */
 .rajasthan-content-box h4 {
   color: #787459;
   margin-bottom: 12px;
@@ -1511,7 +1644,6 @@ filter: blur(8px);
   justify-content: flex-start;
 }
 
-/* RIGHT → text right, image left */
 .rajasthan-timeline-item.right {
   justify-content: flex-end;
 }
@@ -1520,12 +1652,10 @@ filter: blur(8px);
   text-align: left;
 }
 
-/* RIGHT item → text aligned right */
 .rajasthan-timeline-item.right .rajasthan-content-box {
   text-align: right;
 }
 
-/* Keep list readable when right-aligned */
 .rajasthan-timeline-item.right .rajasthan-content-box ul {
   padding-right: 0;
   padding-left: 0;
@@ -1563,7 +1693,6 @@ filter: blur(8px);
   font-family: "Montserrat", sans-serif;
 }
 
-/* TABLES */
 .guide-tables {
   display: flex;
   flex-direction: column;
@@ -1615,7 +1744,6 @@ filter: blur(8px);
   border-bottom: 1px solid #eee;
 }
 
-/* ANIMATIONS */
 .animate-left {
   animation: slideLeft .9s ease forwards;
   opacity: 0;
@@ -1668,7 +1796,6 @@ filter: blur(8px);
   line-height: 1.15; 
 }
 
-/* RIGHT */
 .itinerary-right p {
   font-size: 16px;
   color: #778877;
@@ -1683,7 +1810,6 @@ filter: blur(8px);
   text-align: center;
 }
 
-/* CARDS */
 .details-cards {
   max-width: 1400px;
   margin: auto;
@@ -1719,7 +1845,6 @@ filter: blur(8px);
   text-align: left;
 }
 
-/* TABLE ROWS */
 .details-table-row {
   display: grid;
   grid-template-columns: 1fr 2fr;

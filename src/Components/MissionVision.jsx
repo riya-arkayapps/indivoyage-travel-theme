@@ -19,7 +19,6 @@ const MissionVision=()=>{
         </p>
       </motion.div>
 
-      {/* New 1 Row - 2 Column Layout */}
       <div className="journey-grid">
         {/* LEFT COLUMN → 2 SMALL CARDS */}
         <div className="left-col">

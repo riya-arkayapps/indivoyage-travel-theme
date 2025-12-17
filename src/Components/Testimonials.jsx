@@ -1,5 +1,7 @@
 import React from "react";
 import { testimonials } from "../Data";
+
+/**Important Library Import for Slider */
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";

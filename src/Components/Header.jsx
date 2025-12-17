@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect,  useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Sidebar from "./Sidebar";
 
@@ -13,17 +14,39 @@ const Header = ({
 }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
+  const heroRef = useRef(null);
+    const [scrolled, setScrolled] = useState(false);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setScrolled(!entry.isIntersecting);
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+  
+      if (heroRef.current) observer.observe(heroRef.current);
+  
+      return () => observer.disconnect();
+    }, []);
+
   return (
     <>
+    <section ref={heroRef}>
       {/* NAVBAR BUTTON */}
-      <div className="logo-with-btn">
-        <h1 className="logo">IndiVoyage</h1>
-      <div className="menu-btn" onClick={() => setOpenSidebar(true)}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      </div>
+       <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+  <div className="header-inner">
+    <Link to='/'><h1 className="logo">IndiVoyage</h1></Link>
+
+    <div className="menu-btn" onClick={() => setOpenSidebar(true)}>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
 
       {/* HERO SECTION */}
       <section className="hero-section" style={{ backgroundImage: `url(${bgImage})` }}>
@@ -78,6 +101,7 @@ const Header = ({
     </section>
 
       <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
+      </section>
     </>
   );
 };

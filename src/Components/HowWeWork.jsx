@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import dottedBg from "../Images/dotted-lines.png";
+
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -22,7 +22,6 @@ const HowWeWork=()=>{
         <section className="how-we-work">
       <div
         className="how-we-work-wrapper"
-        style={{ backgroundImage: `url(${dottedBg})` }}
       >
         {/* Center Heading */}
         <motion.div

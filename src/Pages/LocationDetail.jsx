@@ -1,15 +1,22 @@
+/**Important Imports useful in code */
 import React, {useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+/**Image Import */
 import breadCrumbImg from '../Images/rajasthan-breadcrumb.webp';
-import Header from "../Components/Header";
-import Features from "../Components/Features";
-import { RajasthanFaq, RajasthanFeatures, RajasthanLocations, RajasthanImages } from "../Data";
-import HowWeWork from "../Components/HowWeWork";
-import Testimonials from "../Components/Testimonials";
-import Cta from "../Components/Cta";
 import Story1 from '../Images/rajasthan-story-1.webp';
 import Story2 from '../Images/rajasthan-story-2.webp';
 import Story3 from '../Images/rajasthan-story-3.webp';
+
+/**Component Import */
+import Header from "../Components/Header";
+import Features from "../Components/Features";
+import HowWeWork from "../Components/HowWeWork";
+import Testimonials from "../Components/Testimonials";
+import Cta from "../Components/Cta";
+
+/**Data Import */
+import { RajasthanFaq, RajasthanFeatures, RajasthanLocations, RajasthanImages } from "../Data";
 
 const LocationDetail=()=>{
      const [openIndex, setOpenIndex] = useState(0);

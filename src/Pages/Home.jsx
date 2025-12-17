@@ -1,7 +1,12 @@
-import React,{ useState, useEffect} from "react";
+/**Important Imports useful in code */
+import React,{ useState, useEffect, useRef} from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+/*Data Import */
 import { destinations, itineraries, seasons, slides } from "../Data";
+
+/**Image Import */
 import aboutImg from '../Images/home-about.webp';
 import RajasthanImg from '../Images/home-rajasthan.webp';
 import CamelImg from '../Images/home-camel.webp';
@@ -15,8 +20,11 @@ import activity7 from '../Images/activity-7.webp';
 import activity8 from '../Images/activity-8.webp';
 import activity9 from '../Images/activity-5.webp';
 import storyVector from '../Images/india-stories-vector.png';
+import locationVector from '../Images/location-grid-vector.png';
 import aeroplaneicon from '../Images/plane.png';
 import pin from '../Images/pin.png';
+
+/**Component Import */
 import Testimonials from "../Components/Testimonials";
 import Cta from "../Components/Cta";
 import Features from "../Components/Features";
@@ -33,24 +41,48 @@ const Home=()=>{
   }, []);
 
   const [openSidebar, setOpenSidebar] = useState(false);
+
+  const heroRef = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (heroRef.current) observer.observe(heroRef.current);
+
+    return () => observer.disconnect();
+  }, []);
     return(
         <>
         <section
+          ref={heroRef}
       className="hero"
       style={{ backgroundImage: `url(${slides[index].image})` }}
     >
       {/* Overlay */}
       <div className="overlay" />
-
+      
       {/* Header */}
-      <div className="logo-with-btn">
-        <h1 className="logo">IndiVoyage</h1>
-      <div className="menu-btn" onClick={() => setOpenSidebar(true)}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      </div>
+    
+        <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+  <div className="header-inner">
+      <Link to='/'><h1 className="logo">IndiVoyage</h1></Link>
+
+    <div className="menu-btn" onClick={() => setOpenSidebar(true)}>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+   
 
       {/* Center Content */}
       <div className="hero-content">
@@ -124,28 +156,32 @@ const Home=()=>{
           </motion.h3>
 
           <motion.ul
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1 }
-              }
-            }}
-          >
-            {["Jaipur, Rajasthan", "Rishikesh, Uttarakhand", "Leh, Ladakh", "Spiti Valley, Himachal Pradesh", "Varanasi, Uttar Pradesh"].map(
-              (item, index) => (
-                <motion.li
-                  key={index}
-                  variants={{
-                    hidden: { opacity: 0, x: -20 },
-                    visible: { opacity: 1, x: 0 }
-                  }}
-                >
-                  {item}
-                </motion.li>
-              )
-            )}
-          </motion.ul>
+  variants={{
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  }}
+>
+  {[
+    { label: "Jaipur, Rajasthan", path: "/locationDetail" },
+    { label: "Rishikesh, Uttarakhand", path: "/locationDetail" },
+    { label: "Leh, Ladakh", path: "/locationDetail" },
+    { label: "Spiti Valley, Himachal Pradesh", path: "/locationDetail" },
+    { label: "Varanasi, Uttar Pradesh", path: "/locationDetail" }
+  ].map((item, index) => (
+    <motion.li
+      key={index}
+      variants={{
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 }
+      }}
+    >
+      <Link to={item.path}>{item.label}</Link>
+    </motion.li>
+  ))}
+</motion.ul>
         </motion.div>
          <img src={storyVector} alt="" className="vector-img-home-about" />
                 <img src={aeroplaneicon} alt="" className="plane-img-1" />
@@ -154,7 +190,6 @@ const Home=()=>{
 
 
       {/**Destinations Section */}
-      <div className="bg-wrapper">
   <div className="destinations-section">
 
     {/* HEADINGS */}
@@ -181,6 +216,11 @@ const Home=()=>{
    
     <div className="destinations-cards">
       {destinations.slice(0,3).map((i, index) => (
+          <Link
+              to="/locationDetail"
+              key={index}
+              className="card-link"
+            >
         <motion.div
           className="destination-card"
           key={index}
@@ -207,11 +247,14 @@ const Home=()=>{
           </div>
 
         </motion.div>
+        </Link>
       ))}
+      
     </div>
-
+       <img src={locationVector} alt="" className="vector-img-location" />
+                <img src={aeroplaneicon} alt="" className="plane-img-1-location" />
+                <img src={aeroplaneicon} alt="" className="plane-img-2-location" />
   </div>
-</div>
 
         {/**Royal Rajasthan Section */}
         <div className="bg-wrapper">
@@ -232,8 +275,8 @@ const Home=()=>{
     <h3 className="section-subheading">Discover Iconic Destinations</h3>
     <h2 className="section-heading">Royal Rajasthan</h2>
     <p>A land where history, artistry, and grandeur come together to create an experience unlike any other. Known for its majestic forts, opulent palaces, and vibrant desert landscapes, the state captures the true essence of India’s royal past. Every city offers a unique story—Jaipur impresses with its pink façades and architectural wonders, Udaipur mesmerizes with serene lakes and marble palaces, while Jodhpur stands proudly with its blue houses and the mighty Mehrangarh Fort watching over the city. Further west, Jaisalmer rises like a golden mirage in the Thar Desert, offering unforgettable moments through camel safaris, shimmering dunes, and its iconic living fort. Beyond the sights, Rajasthan’s culture breathes life into every journey. From folk music and dance to traditional handicrafts, colourful markets, and flavourful Rajasthani cuisine, the state ensures every traveller is immersed in authenticity. Whether you seek heritage, adventure, or cultural immersion, Royal Rajasthan offers a journey filled with unforgettable stories, timeless art, and experiences that stay with you long after you leave.</p>
-    <Link>Know More</Link>
-    <Link>Book an Royal Experience → </Link>
+    <Link to='/about'>Know More</Link>
+    <Link to='/contact'>Book an Royal Experience → </Link>
   </motion.div>
 
   <motion.div
@@ -313,6 +356,11 @@ const Home=()=>{
 
   <div className="destinations-cards">
     {itineraries.map((i, index) => (
+      <Link
+              to="/adventureDetail"
+              key={index}
+              className="card-link"
+            >
       <motion.div
         className="destination-card"
         key={index}
@@ -335,8 +383,11 @@ const Home=()=>{
           <p>{i.desc}</p>
         </div>
       </motion.div>
+      </Link>
     ))}
   </div>
+  <img src={storyVector} alt="" className="vector-img-itinerary" />
+                <img src={aeroplaneicon} alt="" className="plane-img-1-itinerary" />
 </div>
 
 
@@ -375,7 +426,8 @@ const Home=()=>{
     whileTap={{ scale: 0.95 }}
     transition={{ duration: 0.3 }}
   >
-    Book Now
+    <Link to='/contact'>
+    Book Now </Link>
   </motion.button>
 </div>
 
@@ -383,25 +435,32 @@ const Home=()=>{
 <div className="seasons-section margin-class">
   <div className="heading-ul-wrapper">
     <motion.ul
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-      }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  }}
+  className="flex gap-4"
+>
+  {[
+    { label: "Winter", path: "/locationDetail" },
+    { label: "Monsoon", path: "/locationDetail" },
+    { label: "Summer", path: "/locationDetail" }
+  ].map((item, index) => (
+    <motion.li
+      key={item.label}  // use label as stable key
+      variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
     >
-      {["Winter","Monsoon","Summer"].map((item, index) => (
-        <motion.li
-          key={index}
-          variants={{
-            hidden: { opacity: 0, x: -20 },
-            visible: { opacity: 1, x: 0 }
-          }}
-        >
-          {item}
-        </motion.li>
-      ))}
-    </motion.ul>
+      <Link href={item.path}>
+        <a className="px-4 py-2 rounded-md " href='/locationDetail'>
+          {item.label}
+        </a>
+      </Link>
+    </motion.li>
+  ))}
+</motion.ul>
 
     <div className="heading-wrapper">
       <motion.h3
@@ -428,6 +487,11 @@ const Home=()=>{
 
   <div className="destinations-cards">
     {seasons.map((i, index) => (
+       <Link
+              to="/locationDetail"
+              key={index}
+              className="card-link"
+            >
       <motion.div
         className="destination-card"
         key={index}
@@ -446,12 +510,16 @@ const Home=()=>{
           viewport={{ once: true }}
         />
         <div className="card-content">
-          <h3 className="section-heading">{i.title}</h3>
+          <h3 className="section-heading center-text">{i.title}</h3>
           <p>{i.desc}</p>
         </div>
       </motion.div>
+      </Link>
+      
     ))}
   </div>
+  <img src={storyVector} alt="" className="vector-img-season" />
+                <img src={aeroplaneicon} alt="" className="plane-img-1-season" />
 </div>
 
 
@@ -463,5 +531,7 @@ const Home=()=>{
       </>
     )
 }
+
+/***Hero section,trending activity section,season btns */
 
 export default Home;

@@ -1,5 +1,9 @@
 import React from "react";
+
+/**Image Import */
 import breadCrumbImg from '../Images/Faq-breadCrumb.webp';
+
+/**Component Import */
 import Header from "../Components/Header";
 import Faqs from "../Components/Faqs";
 
