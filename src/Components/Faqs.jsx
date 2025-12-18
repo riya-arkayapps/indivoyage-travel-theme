@@ -7,7 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faqs } from "../Data";
 
 const Faqs=()=>{
-    const [openIndex, setOpenIndex] = useState(0);
+   const [openIndex, setOpenIndex] = useState(-1);
+   console.log("openIndex:", openIndex);
     return(
         <>
         <section className="faq-section">
@@ -22,7 +23,7 @@ const Faqs=()=>{
             <motion.div
               key={i}
               className={`faq-card ${isOpen ? "open" : ""}`}
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+              onClick={() => setOpenIndex(isOpen ? -1 : i)}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.25 }}
             >

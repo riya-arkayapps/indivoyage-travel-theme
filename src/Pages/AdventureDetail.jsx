@@ -13,7 +13,7 @@ import Cta from "../Components/Cta";
 import { HouseboatFaq, HouseBoatFeatures, HouseBoatImages } from "../Data";
 
 const AdventureDetail=()=>{
-     const [openIndex, setOpenIndex] = useState(0);
+     const [openIndex, setOpenIndex] =  useState(-1);
     const [openImg, setOpenImg] = useState(null);
     return(
         <>
@@ -24,6 +24,8 @@ const AdventureDetail=()=>{
   mainHeading="Houseboat Adventure Drift Into a World of Calm"
   description="Experience the magic of living on water with a houseboat adventure that blends peaceful landscapes, gentle waves, and the timeless charm of floating life. Whether you’re gliding through still backwaters, drifting past lush greenery, or watching golden sunsets melt into the horizon from your private deck, every moment feels calm and surreal. Wake up to the soothing sounds of birds, soft ripples against the hull, and cool morning breeze carrying the scent of nature all around you. A houseboat stay isn’t just a getaway—it’s a slow, immersive journey that lets you disconnect from routine and reconnect with serenity. Perfect for travelers seeking tranquility, romance, meaningful experiences, or simply a refreshing break wrapped in nature’s quiet beauty, this adventure promises memories that linger long after the trip ends."
   showDescription={true}/>
+
+     <div className="next-section-margin"></div>
 
   {/**Feature cards section */}
           <section className="feature-cards-section">
@@ -122,7 +124,7 @@ const AdventureDetail=()=>{
     transition={{ duration: 0.7 }}
     viewport={{ once: true }}
   >
-    <div className="details-card-header table-header">
+    <div className="details-card-header table-header-adventure">
       <span>Season</span>
       <span>Experience</span>
     </div>
@@ -223,7 +225,7 @@ const AdventureDetail=()=>{
             <motion.div
               key={i}
               className={`faq-card ${isOpen ? "open" : ""}`}
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+             onClick={() => setOpenIndex(isOpen ? -1 : i)}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.25 }}
             >

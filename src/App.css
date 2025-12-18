@@ -167,6 +167,7 @@ body{
   font-weight: 700;
   margin-bottom: 0;
   font-family: "Pirata One", cursive;
+   margin-top:2rem;  
 }
 
 .hero-content-box {
@@ -660,7 +661,8 @@ body{
   background: linear-gradient(#fff 0%, #fdeac6 40%, #f6dcae 100%);
   padding: 120px 0;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden; /* already needed */
+  overflow-y: hidden;
 }
 
 .trending-section {
@@ -692,6 +694,7 @@ body{
   min-width: 1000px; 
   justify-content: center;
   margin: auto;
+  overflow-x: visible;
 }
 
 .trending-strip::before {
@@ -727,24 +730,24 @@ body{
 }
 
 .card-0 {  top: 170px; }
-.card-1 { top: -5px; }
-.card-2 { top: 175px; }
-.card-3 {  top: 15px; }
-.card-4 { top: 180px; }
-.card-5 {  top: 0px; }
-.card-6 {  top: 180px; }
-.card-7 { top: 15px; }
+.card-1 { top: -45px; }
+.card-2 { top: 185px; }
+.card-3 {  top: 5px; }
+.card-4 { top: 150px; }
+.card-5 {  top: -35px; }
+.card-6 {  top: 190px; }
+.card-7 { top: -5px; }
 .card-8 { top: 180px; }
 
-.trending-card:nth-child(1) .pin { bottom: 165px; left: 46%; }
-.trending-card:nth-child(2) .pin { bottom: -11px; left: 50%; }
-.trending-card:nth-child(3) .pin { bottom: 155px; left: 55%; }
-.trending-card:nth-child(4) .pin { bottom: -20px; left: 48%; }
-.trending-card:nth-child(5) .pin { bottom: 180px; left: 50%; }
-.trending-card:nth-child(6) .pin { bottom: -15px; left: 53%; }
-.trending-card:nth-child(7) .pin { bottom: 150px; left: 49%; }
+.trending-card:nth-child(1) .pin { bottom: 175px; left: 46%; }
+.trending-card:nth-child(2) .pin { bottom: -20px; left: 50%; }
+.trending-card:nth-child(3) .pin { bottom: 175px; left: 55%; }
+.trending-card:nth-child(4) .pin { bottom: 5px; left: 48%; }
+.trending-card:nth-child(5) .pin { bottom: 170px; left: 50%; }
+.trending-card:nth-child(6) .pin { bottom: -20px; left: 53%; }
+.trending-card:nth-child(7) .pin { bottom: 180px; left: 49%; }
 .trending-card:nth-child(8) .pin { bottom: -15px; left: 52%; }
-.trending-card:nth-child(9) .pin { bottom: 158px; left: 47%; }
+.trending-card:nth-child(9) .pin { bottom: 175px; left: 47%; }
 
 .travel-section {
   max-width: 1400px;
@@ -1244,6 +1247,7 @@ footer a{
   max-width: 1400px;
   margin: auto; 
   padding: 4rem 0;
+  padding-top: 0;
 }
 
 .journey-text {
@@ -1483,6 +1487,8 @@ footer a{
   line-height: 1.6;
   color: #7a7468;
   font-family: "Montserrat", sans-serif;
+  overflow: hidden; /* ensures hidden until motion animation expands it */
+  height: 0;   
 }
 
 .feature-cards-section{
@@ -1653,13 +1659,18 @@ footer a{
 }
 
 .rajasthan-timeline-item.right .rajasthan-content-box {
-  text-align: right;
+  text-align: left
 }
 
 .rajasthan-timeline-item.right .rajasthan-content-box ul {
   padding-right: 0;
   padding-left: 0;
   list-style-position: inside;
+  margin-left: 25rem;
+}
+
+.rajasthan-timeline-item.right .rajasthan-content-box h4{
+  margin-left: 25rem;
 }
 
 .no-margin-class{
@@ -1667,7 +1678,7 @@ footer a{
 }
 
 .guide-section {
-  padding: 80px 0;
+  padding: 80px 1rem;
   overflow: hidden;
   max-width: 1400px;
   margin: auto;
@@ -1854,6 +1865,10 @@ footer a{
   line-height: 1.7;
   font-family: "Montserrat", sans-serif;
   text-align: left;
+}
+
+.details-card-header span:nth-of-type(2) {
+  margin-left: 2rem;
 }
 
 .details-table-row:not(:last-child) {

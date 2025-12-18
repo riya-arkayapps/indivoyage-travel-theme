@@ -417,14 +417,9 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.12);
   }
 
-   .guide-section {
-    padding: 60px 1rem;
-  }
-
-
-  .guide-container {
+ .guide-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .guide-content {
@@ -433,31 +428,63 @@
 
   .guide-desc {
     max-width: 100%;
-    font-size: 14px;
-    margin: auto;
+    margin: 0 auto;
+    font-size: 15px;
   }
 
-  .guide-tables {
-    gap: 20px;
+  /* TABLE CARD */
+  .table-card {
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
   }
 
+  /* Header becomes section title */
   .table-header {
-    grid-template-columns: 1fr;
-    row-gap: 8px;
-    font-size: 18px;
+    display: block;
+    font-size: 20px;
     padding: 14px 16px;
-    text-align: center;
+    text-align: left;
   }
 
+  .table-header span {
+    display: none; /* hide column titles */
+  }
+
+  /* Each row becomes a stacked card */
   .table-row {
-    grid-template-columns: 1fr;
-    row-gap: 6px;
-    padding: 12px 16px;
-    font-size: 13px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 16px;
+    font-size: 14px;
   }
 
-  .table-card:hover {
+  .table-row span {
+    display: block;
+  }
+
+  /* Emphasize first value */
+  .table-row span:first-child {
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+  }
+
+  /* Secondary values */
+  .table-row span:nth-child(2) {
+    color: #777;
+    font-size: 13px;
+  }
+
+  .table-row span:nth-child(3) {
+    color: #778877;
+    font-size: 14px;
+  }
+
+  /* Animation safety */
+  .animate-left,
+  .animate-right {
+    animation: none;
+    opacity: 1;
     transform: none;
   }
 
@@ -528,51 +555,143 @@
     margin-bottom: 14px;
   }
 
-  .details-section {
-    padding: 50px 1rem;
-    text-align: center;
-  }
-
-  .details-cards {
+   .details-cards {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .details-card {
-    transform: none;
+    width: 80%;
+    margin: auto;
   }
 
-  .details-card-header {
-    font-size: 22px;
-    padding: 12px 16px;
-  }
+.details-card:first-child .details-card-header,
+.details-card:first-child .details-table-row {
+  display: flex;
+  flex-direction: row;
+}
 
-  .details-card .table-header {
-    grid-template-columns: 1fr 2fr;
-    font-size: 22px;
-    column-gap: 16px;
-  }
 
-  .details-table-row {
-    grid-template-columns: 1fr 2fr;
-    padding: 12px 16px;
-    font-size: 15px;
-  }
+.details-card:first-child .details-card-header span:nth-of-type(1),
+.details-card:first-child .details-table-row span:nth-of-type(1) {
+  width: 35%;
+  text-align: left;
+  margin-left: 1rem;
+}
 
-  .details-card li {
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 4px 0;
-  }
 
-  .details-card:hover {
-    transform: none;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  }
+.details-card:first-child .details-card-header span:nth-of-type(2),
+.details-card:first-child .details-table-row span:nth-of-type(2) {
+  width: 65%; 
+  text-align: left; 
+}
+
+.details-card:first-child .details-table-row span:nth-of-type(2){
+  margin-left: 4rem;
+}
+
+.hero-content-box{
+  top:100px;
+  width:95%;
+  margin: auto;
+}
+
+.hero-title{
+  margin-top: 5rem;
+}
+
+
+.hero-description{
+  font-size: 12px;
+  text-align: justify;
+  width:100%;
+}
 
     .hero-content h2{
   font-size: 28px;
 }
+
+.rajasthan-journey-section{
+  padding: 1rem;
+}
+
+/* Content box full width & centered */
+  .rajasthan-content-box {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding:1rem;
+  }
+
+  /* Reset all desktop offsets */
+  .rajasthan-timeline-item.right .rajasthan-content-box,
+  .rajasthan-timeline-item.left .rajasthan-content-box {
+    margin: 0;
+  }
+
+  .rajasthan-timeline-item.right .rajasthan-content-box ul,
+  .rajasthan-timeline-item.right .rajasthan-content-box h4 {
+    margin: 0;
+  }
+
+  /* Image moves BELOW content */
+  .rajasthan-image-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    max-width: 342px;
+    height: 360px;
+    margin: 24px auto 0;
+  }
+
+  .rajasthan-image-card img {
+    border-radius: 6px;
+  }
+
+   .rajasthan-image-card.rotate-right,
+  .rajasthan-image-card.rotate-left {
+    transform: none;
+  }
+
+  .rajasthan-timeline-item:nth-child(1) .rajasthan-image-card img {
+    transform: rotate(-18deg);
+}
+
+.rajasthan-timeline-item:nth-child(2) .rajasthan-image-card img {
+  transform: rotate(18deg);
+  
+}
+
+.rajasthan-timeline-item:nth-child(3) .rajasthan-image-card img {
+  transform: rotate(-18deg);
+}
+
+ .rajasthan-timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+   .rajasthan-timeline-item.right{
+    flex-direction: column-reverse;
+   }
+
+  /* Neutralize desktop positioning */
+  .rajasthan-image-card {
+    position: relative;
+    inset: auto;
+  }
+
+   .curve-line{
+    top:53% !important;
+  }
+
+ .next-section-margin{
+  margin-top: 40rem;
+ }
 }
 
 /* Small devices (sm: 576px and up) */
@@ -862,7 +981,7 @@
     font-size: 12px;
   }
 
-  .rajasthan-content-box {
+  /*.rajasthan-content-box {
     padding: 20px 15px;
   }
 
@@ -878,7 +997,70 @@
     width: 100%;
     max-width: 300px;
     height: auto;
+  }*/
+
+  .rajasthan-journey-section{
+    padding: 1rem;
   }
+
+  .rajasthan-timeline-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .rajasthan-timeline-item.right{
+    flex-direction: column-reverse;
+  }
+
+  /* Content box full width & centered */
+  .rajasthan-content-box {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding:1rem;
+  }
+
+  /* Reset all desktop offsets */
+  .rajasthan-timeline-item.right .rajasthan-content-box,
+  .rajasthan-timeline-item.left .rajasthan-content-box {
+    margin: 0;
+  }
+
+  .rajasthan-timeline-item.right .rajasthan-content-box ul,
+  .rajasthan-timeline-item.right .rajasthan-content-box h4 {
+    margin: 0;
+  }
+
+  /* Image moves BELOW content */
+  .rajasthan-image-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    max-width: 342px;
+    height: 360px;
+    margin: 24px auto 0;
+  }
+
+  .rajasthan-image-card img {
+    border-radius: 6px;
+  }
+
+  .rajasthan-timeline-item:nth-child(1) .rajasthan-image-card img {
+    transform: rotate(-18deg);
+}
+
+.rajasthan-timeline-item:nth-child(2) .rajasthan-image-card img {
+  transform: rotate(18deg);
+  
+}
+
+.rajasthan-timeline-item:nth-child(3) .rajasthan-image-card img {
+  transform: rotate(-18deg);
+}
 
   .guide-container {
     grid-template-columns: 1fr;
@@ -964,28 +1146,38 @@
 
   .details-cards {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 20px;
   }
 
-  .details-section {
-    padding: 70px 1.5rem;
+  .details-card {
+    width: 80%;
+    margin: auto;
   }
 
-  .details-card-header {
-    font-size: 20px;
-    text-align: center;
-  }
+.details-card:first-child .details-card-header,
+.details-card:first-child .details-table-row {
+  display: flex;
+  flex-direction: row;
+}
 
-  .details-table-row {
-    grid-template-columns: 1fr;
-    row-gap: 6px;
-    text-align: center;
-  }
 
-  .details-card li {
-    text-align: center;
-    font-size: 14px;
-  }
+.details-card:first-child .details-card-header span:nth-of-type(1),
+.details-card:first-child .details-table-row span:nth-of-type(1) {
+  width: 35%;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+
+.details-card:first-child .details-card-header span:nth-of-type(2),
+.details-card:first-child .details-table-row span:nth-of-type(2) {
+  width: 65%; 
+  text-align: left; 
+}
+
+.details-card:first-child .details-table-row span:nth-of-type(2){
+  margin-left: 4rem;
+}
 
   .hero-content h2{
   font-size: 30px;
@@ -1000,8 +1192,18 @@
 }
 
 .hero-content-box{
-  top: 400px; 
+  top: 100px; 
 }
+
+.hero-title{
+  margin-top: 5rem;
+}
+
+  .curve-line{
+    top:49% !important;
+  }
+
+
 }
 
 @media (max-width: 768px) {
@@ -1030,26 +1232,21 @@
     font-size: 18px;
   }
 
-  .rajasthan-timeline-item {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 60px;
+  /* Reduce font sizes for small screens */
+  .hero-title {
+    font-size: 32px;
   }
 
-  .rajasthan-image-card {
-    position: static;
-    top: 0;
-    left: 0;
-    margin-bottom: 20px;
-    transform: rotate(0);
+  .hero-small-title {
+    font-size: 20px;
   }
 
-  .rajasthan-content-box {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    border-width: 2px;
+  .hero-bold-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 14px;
   }
 
   .vector-img-home-about,.vector-img-location,.vector-img-feature,.vector-img-itinerary,.vector-img-season,.plane-img-1,.plane-img-2,.plane-img-1-location,.plane-img-2-location,.plane-img-1-itinerary,.plane-img-1-feature,.plane-img-1-season{
@@ -1060,38 +1257,6 @@
 
 @media (max-width: 990px) {
 
-  .trending-section {
-    width: 100%;
-    min-width: unset;
-    max-width: unset;
-    padding: 40px 0 80px;
-  }
-
-  .trending-strip {
-    overflow-x: auto;
-    display: flex;
-    gap: 40px;
-    padding-bottom: 40px;
-
-    max-width: 100%;
-    min-width: unset;
-    margin: 0;
-  }
-
-  .trending-strip::-webkit-scrollbar { height: 6px; }
-  .trending-strip::-webkit-scrollbar-thumb {
-    background: #c6a87f;
-    border-radius: 10px;
-  }
-
-  .trending-card {
-    top: 0 !important;
-    transform: none !important;
-  }
-
-  .pin {
-    bottom: -15px !important;
-  }
 
   .section-heading{
     line-height: 1;
@@ -1342,7 +1507,7 @@
     font-size: 12px;
   }
 
-  .rajasthan-content-box {
+  /*.rajasthan-content-box {
     padding: 30px 20px;
   }
 
@@ -1357,7 +1522,7 @@
   .rajasthan-image-card {
     width: 280px;
     height: 320px;
-  }
+  }*/
 
   .guide-container {
     grid-template-columns: 1fr 1fr;
@@ -1503,8 +1668,40 @@
 }
 
 .hero-content-box{
-  top: 500px; 
+  top: 100px; 
 }
+
+.hero-title{
+  margin-top: 5rem;
+}
+
+.rajasthan-timeline-item {
+    margin-bottom: 120px;
+  }
+
+  .rajasthan-image-card {
+    width: 320px;
+    height: 380px;
+    top: -10px;
+  }
+
+  .rajasthan-content-box {
+    padding: 32px;
+  }
+
+  /* Reduce right-card offset */
+  .rajasthan-timeline-item.right .rajasthan-content-box ul,
+  .rajasthan-timeline-item.right .rajasthan-content-box h4 {
+    margin-left: 20rem;
+  }
+
+  .rajasthan-timeline-item.left .rajasthan-content-box ul{
+    margin-right: 20rem;
+  }
+
+   .curve-line{
+    top:47% !important;
+  }
 
 }
 
@@ -1549,6 +1746,7 @@
 
   .card-content h3 {
     font-size: 25px;
+    line-height: 1;
   }
 
   .card-content p {
@@ -1740,11 +1938,6 @@
     font-size: 15px;
   }
 
-  .rajasthan-image-card {
-    width: 320px;
-    height: 380px;
-  }
-
   .guide-container {
     gap: 40px;
   }
@@ -1867,14 +2060,37 @@
 }
 
 .hero-content-box{
-  top: 475px; 
+  top: 100px; 
 }
+
+.hero-title{
+  margin-top: 5rem;
+}
+
+.rajasthan-journey-section{
+  padding:1rem;
+}
+
+.rajasthan-image-card {
+    width: 360px;
+    height: 420px;
+  }
+
+  /* Slightly reduce desktop offset */
+  .rajasthan-timeline-item.right .rajasthan-content-box ul,
+  .rajasthan-timeline-item.right .rajasthan-content-box h4 {
+    margin-left: 20rem;
+  }
 
 }
 
 @media (min-width: 1200px) and (max-width: 1399.98px){
 .hero-content-box{
-  top: 400px; 
+  top: 100px; 
+}
+
+.hero-title{
+  margin-top: 7rem;
 }
   
 }
@@ -1945,7 +2161,11 @@
 }
 
 .hero-content-box{
-  top: 500px; 
+  top: 100px; 
+}
+
+.hero-title{
+  margin-top: 7rem;
 }
 
 }
@@ -2014,6 +2234,52 @@
 }
 
 .hero-content-box{
-  top: 450px; 
+  top: 100px; 
 }
+
+.hero-title{
+  margin-top: 10rem;
+}
+}
+
+@media (max-width: 1200px) {
+  .trending-section {
+    width: 100%;
+    min-width: unset;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .trending-strip {
+    overflow-x: auto; 
+    overflow-y: hidden;         /* 🔑 horizontal scroll */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    justify-content: flex-start;
+    padding-bottom: 150px;
+
+    max-width: 100%;
+    min-width: unset;
+  }
+
+  /* hide scrollbar but keep scroll */
+  .trending-strip::-webkit-scrollbar {
+    display: none;
+  }
+  .trending-strip {
+    scrollbar-width: none;
+  }
+
+  .curve-line{
+    top:42%;
+  }
+
+  .card-1 { top: -15px; }
+
+  .card-4 { top: 190px; }
+
+  .card-5 {  top: -5px; }
+
+  .card-8 { top: 190px; }
 }

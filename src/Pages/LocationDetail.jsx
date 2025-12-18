@@ -19,7 +19,7 @@ import Cta from "../Components/Cta";
 import { RajasthanFaq, RajasthanFeatures, RajasthanLocations, RajasthanImages } from "../Data";
 
 const LocationDetail=()=>{
-     const [openIndex, setOpenIndex] = useState(0);
+     const [openIndex, setOpenIndex] = useState(-1);
      const [openImg, setOpenImg] = useState(null);
     return(
         <>
@@ -30,6 +30,8 @@ const LocationDetail=()=>{
   mainHeading="Your story, your way."
   description="Rajasthan is where history, culture, and adventure come together in the most spectacular and captivating way. From majestic forts, ornate havelis, and royal palaces to vast golden deserts, bustling bazaars, and vibrant festivals, the state offers experiences that feel both timeless and unforgettable. Each city carries its own personality—Jaipur’s regal charm, Udaipur’s serene lakes, Jaisalmer’s desert magic, and Jodhpur’s blue lanes—all adding to Rajasthan’s irresistible appeal. Every corner whispers stories of kings, warriors, art, and tradition, making it a dream destination for travelers who crave heritage, beauty, and meaningful, immersive journeys that stay with them long after the trip ends."
   showDescription={true}/>
+
+     <div className="next-section-margin"></div>
 
  {/**Feature cards section */}
         <section className="feature-cards-section">
@@ -280,7 +282,7 @@ const LocationDetail=()=>{
             <motion.div
               key={i}
               className={`faq-card ${isOpen ? "open" : ""}`}
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+                onClick={() => setOpenIndex(isOpen ? -1 : i)}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.25 }}
             >

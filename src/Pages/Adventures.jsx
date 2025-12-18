@@ -34,10 +34,9 @@ const Adventures=()=>{
            <Link
       to="/adventureDetail"
       key={index}
-      className="card-link"
+      className="destination-card"
     >
           <motion.div
-            className="destination-card"
             key={index}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}

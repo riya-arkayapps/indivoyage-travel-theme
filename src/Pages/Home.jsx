@@ -15,19 +15,24 @@ import activity2 from '../Images/activity-2.webp';
 import activity3 from '../Images/activity-3.webp';
 import activity4 from '../Images/activity-4.webp';
 import activity5 from '../Images/activity-5.webp';
-import activity6 from '../Images/activity-5.webp';
+import activity6 from '../Images/activity-6.webp';
 import activity7 from '../Images/activity-7.webp';
 import activity8 from '../Images/activity-8.webp';
-import activity9 from '../Images/activity-5.webp';
+import activity9 from '../Images/activity-9.webp';
 import storyVector from '../Images/india-stories-vector.png';
 import locationVector from '../Images/location-grid-vector.png';
 import aeroplaneicon from '../Images/plane.png';
 import pin from '../Images/pin.png';
+import icon1 from '../Images/i1.png';
+import icon2 from '../Images/i2.png';
+import icon3 from '../Images/i3.png';
+import featureVector from '../Images/feature-vector.png';
+
+
 
 /**Component Import */
 import Testimonials from "../Components/Testimonials";
 import Cta from "../Components/Cta";
-import Features from "../Components/Features";
 import Sidebar from "../Components/Sidebar";
 
 const Home=()=>{
@@ -219,11 +224,9 @@ const Home=()=>{
           <Link
               to="/locationDetail"
               key={index}
-              className="card-link"
+              className="destination-card"
             >
         <motion.div
-          className="destination-card"
-          key={index}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: index * 0.12 }}
@@ -359,10 +362,9 @@ const Home=()=>{
       <Link
               to="/adventureDetail"
               key={index}
-              className="card-link"
+             className="destination-card"
             >
       <motion.div
-        className="destination-card"
         key={index}
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -392,7 +394,71 @@ const Home=()=>{
 
 
         {/**Experience travel section */}
-       <Features />
+          <div className="travel-section">
+          <motion.h3
+            className="section-subheading"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            seamless assistance at every step
+          </motion.h3>
+        
+          <motion.h2
+            className="section-heading"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Experience Travel,<br />The Right Way
+          </motion.h2>
+        
+          <motion.div
+            className="features-wrap"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.2 }
+              }
+            }}
+          >
+            <motion.p
+              className="travel-desc"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              A land where history, artistry, and grandeur come together to create an experience unlike any other. Known for its majestic forts, opulent palaces, and vibrant desert landscapes, the state captures the true essence of India’s royal past.
+            </motion.p>
+        
+            <div className="travel-features">
+              {[{icon: icon1, title: "Curated Experiences", desc: "Handpicked routes, local stories, and meaningful moments—never generic tours."},
+                {icon: icon2, title: "Seamless Planning", desc: "Verified stays, smart itineraries, and smooth coordination for a stress-free journey."},
+                {icon: icon3, title: "Trusted Expertise", desc: "Accurate guidance, transparent pricing, and support you can rely on anytime."}].map((f, index) => (
+                <motion.div
+                  className="feature"
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <img src={f.icon} alt="" className="feature-icon" />
+                  <h4>{f.title}</h4>
+                  <p>{f.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <img src={featureVector} alt="" className="vector-img-feature" />
+                <img src={aeroplaneicon} alt="" className="plane-img-1-feature" />
+        </div>
 
       {/**Dream trip Section */}
       <div className="dream-section">
@@ -434,7 +500,7 @@ const Home=()=>{
 
 <div className="seasons-section margin-class">
   <div className="heading-ul-wrapper">
-    <motion.ul
+   <motion.ul
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
@@ -450,17 +516,17 @@ const Home=()=>{
     { label: "Summer", path: "/locationDetail" }
   ].map((item, index) => (
     <motion.li
-      key={item.label}  // use label as stable key
+      key={index}
       variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+      style={{ listStyle: "none" }}
     >
-      <Link href={item.path}>
-        <a className="px-4 py-2 rounded-md " href='/locationDetail'>
-          {item.label}
-        </a>
+      <Link to={item.path}>
+        {item.label}
       </Link>
     </motion.li>
   ))}
 </motion.ul>
+
 
     <div className="heading-wrapper">
       <motion.h3
@@ -490,10 +556,9 @@ const Home=()=>{
        <Link
               to="/locationDetail"
               key={index}
-              className="card-link"
+              className="destination-card"
             >
       <motion.div
-        className="destination-card"
         key={index}
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -532,6 +597,6 @@ const Home=()=>{
     )
 }
 
-/***Hero section,trending activity section,season btns */
+/***comments*/
 
 export default Home;

@@ -8,7 +8,7 @@ const Footer = () => {
       items: [
         { label: "Home", path: "/" },
         { label: "About us", path: "/about" },
-        { label: "Adventures", path: "/adventure" },
+        { label: "Adventures", path: "/adventures" },
         { label: "Contact us", path: "/contact" },
         { label: "FAQ", path: "/faq" }
       ]
